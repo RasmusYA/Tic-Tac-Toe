@@ -10,6 +10,8 @@ System.out.println("2    " + "  | " + "x" + " | ");
 System.out.println("    ---+---+---"); 
 System.out.println("3    " + "  | " + "  | " + "x");
 
+System.out.println("Hello!");
+
 	}
 	
 }
