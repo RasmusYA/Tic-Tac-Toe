@@ -2,12 +2,12 @@ import java.util.*;
 public class GameMenu {
 	
 	public static void main(String[] args) {
-		System.out.println("Welcome to Tic-Tac-Toe");
+		System.out.println("Welcome to Tic-Tac-Toe!");
 		
 		Scanner s = new Scanner(System.in);
-		System.out.println("O------------------X");
-		System.out.println("|[1] -- Start game |\n|[2] -- How to Play|\n|[3] -- Exit	   |");
-		System.out.println("X------------------O");
+		System.out.println(" O-------------------X");
+		System.out.println(" |(1) -- Start game  |\n |(2) -- How to Play |\n |(3) -- Exit\t     |");
+		System.out.println(" X-------------------O");
 		int val = s.nextInt();
 
 		while (val != 3) {
