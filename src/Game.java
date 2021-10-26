@@ -5,11 +5,11 @@ public class Game {
 	public static void startGame() {
 		Scanner scanner = new Scanner(System.in);
 		char gamerTag = 'X';
-		boolean slotIsFull = false;
-		boolean threeInRow = false;
+		boolean slotIsFull = false; // Tillfällig variabel för test
+		boolean threeInRow = false; // Tillfällig variabel för test
 		
-		GameBoard.initializeNewGame();
-		GameBoard.showGameBoard();
+		GameBoard.initializeNewGame(); //Återställer spelbräder, alla slots blir tomma
+		GameBoard.showGameBoard(); //Visar spelbrädet
 		System.out.println("First select a Row and then Column");
 		
 		while(!slotIsFull || threeInRow) {
@@ -27,6 +27,8 @@ public class Game {
 		GameBoard.slot[0] = 'O';
 		GameBoard.showGameBoard();
 			
+		
+		
 		}
 		
 	}
@@ -40,7 +42,8 @@ public class Game {
 		return userInput;
 	}
 	
-
+	//Konverterar det som användaren skriver, till exempel row: 1 och column: 3
+	//Input blir då 13, denna function konverterar detta till 2.
 	public static int convertInputToInt(String userInput) {
 		int boardNumber = switch (userInput) {
 		case "11" -> 0;

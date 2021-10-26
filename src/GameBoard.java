@@ -22,7 +22,6 @@ public class GameBoard {
 	
 
 	public static void showGameBoard(){
-		
 		System.out.println("     1   2   3\n");		
 		System.out.println("1    " + slot[0] + " | " + slot[1] + " | " + slot[2]);	
 		System.out.println("    ---+---+---");
