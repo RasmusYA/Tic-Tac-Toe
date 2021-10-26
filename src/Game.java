@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Game {
 
-	// public static void startGame() {
-	public static void main(String[] args) {
+	public static void startGame() {
 		Scanner scanner = new Scanner(System.in);
 		char gamerTag = 'X';
 		boolean slotIsFull = false;
