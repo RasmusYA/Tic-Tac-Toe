@@ -20,7 +20,8 @@ public class GameMenu {
 			}
 
 			else if (val == 1) {
-				Game.startGame();	
+				Game.startGame();
+				Game.startGame();
 			} else if (val == 2) {
 				System.out.println(" # The game is played on a on a 3 by 3 grid of 9 empty squares.");
 				System.out.println(

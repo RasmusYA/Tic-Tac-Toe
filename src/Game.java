@@ -4,7 +4,16 @@ public class Game {
 
 	public static void startGame() {
 		Scanner scanner = new Scanner(System.in);
-		char gamerTag = 'X';
+		
+		char gamerTag = GamerTagChoice.ChoosePlayer(scanner);
+		char computerTag = ' ';
+		if(gamerTag == 'X')
+			computerTag = 'O';
+		else {
+			computerTag = 'X';
+		}
+
+		
 		boolean slotIsFull = false; // Tillfällig variabel för test
 		boolean threeInRow = false; // Tillfällig variabel för test
 		
@@ -27,8 +36,7 @@ public class Game {
 		GameBoard.slot[0] = 'O';
 		GameBoard.showGameBoard();
 			
-		
-		
+	
 		}
 		
 	}
@@ -38,7 +46,7 @@ public class Game {
 		System.out.print("Select column: ");
 		String num2 = scanner.next();
 		String userInput = num1 + num2;
-		
+
 		return userInput;
 	}
 	
