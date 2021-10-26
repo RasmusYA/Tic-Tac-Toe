@@ -4,37 +4,57 @@ public class GameMenu {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Tic-Tac-Toe!");
-
+		int i=1;
+		do {
+		
 		Scanner s = new Scanner(System.in);
-		System.out.println(" O-------------------X");
-		System.out.println(" |Choose an option:  |");
-		System.out.println(" |(1) -- Start game  |\n |(2) -- How to Play |\n |(3) -- Exit\t     |");
-		System.out.println(" X-------------------O");
+		String menu = (" O-------------------X\n"
+		+ " |Choose an Option:  |\n"
+		+ " |(1) -- Start Game  |\n"
+		+ " |(2) -- How to Play |\n"
+		+ " |(3) -- Credits     |\n"
+		+ " |(4) -- Exit        |\n"
+		+ " X-------------------O");
+		System.out.println (menu);
 
-		int val = s.nextInt();
-
-		while (val >1 ) {
-
-			if (val < 1 || val > 3) {
-
-			}
-
-			else if (val == 1) {
-				Game.startGame();	
-			} else if (val == 2) {
-				System.out.println(" # The game is played on a on a 3 by 3 grid of 9 empty squares.");
-				System.out.println(
-						" # Two players alternate marking empty squares,\n   one player marking Xs and the other player marking Os.");
-				System.out.println(
-						" # The first player to get 3 of their marks in a row\n   (up, down, across, or diagonally) is the winner.");
-				System.out.println(
-						" # When all 9 squares are full, the game is over.\n   If no player has 3 marks in a row, the game ends in a tie.");
-				
-			} else if (val == 3) {
-				System.out.println("Program shutdown. Goodbye!");
-				System.exit(0);
-			}
+		String choice = s.nextLine();
+		switch (choice) {
+		case "1":
+			Game.startGame();
 			break;
-		}
-	}
+		case "2":
+			System.out.println(" # The game is played on a on a 3 by 3 grid of 9 empty squares.");
+			System.out.println(
+					" # Two players alternate marking empty squares,\n   one player marking Xs and the other player marking Os.");
+			System.out.println(
+					" # The first player to get 3 of their marks in a row\n   (up, down, across, or diagonally) is the winner.");
+			System.out.println(
+					" # When all 9 squares are full, the game is over.\n   If no player has 3 marks in a row, the game ends in a tie.");
+			System.out.println("Press (1) to return to the menu.");
+			Scanner s2 = new Scanner(System.in);
+			int back = s2.nextInt();
+			 if (back == 1);{
+				System.out.println (menu);
+				choice = s.nextLine();
+			 }
+			break;
+		case "3":
+			System.out.println("        TIC-TACK-TOE\n"
+					+"Lisa...........Lead Designer\n"
+					+"Rasmus.........Lead Designer\n"
+					+"Victoria.......Lead Designer\n"
+					+"Oskar...............Designer");
+			break;
+		case "4":
+			System.out.println("Program shutdown. Goodbye!");
+			System.exit(0);
+			break;
+		default:
+            System.out.println("Please, 1, 2, 3, or 4 only.");	
+		
+	 
+	} 
+
+} while(i==1);
+}	
 }
