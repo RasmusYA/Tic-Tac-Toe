@@ -18,19 +18,20 @@ public class GameMenu {
 		System.out.println (menu);
 
 		String choice = s.nextLine();
+		
 		switch (choice) {
 		case "1":
 			Game.startGame();
 			break;
 		case "2":
-			System.out.println(" # The game is played on a on a 3 by 3 grid of 9 empty squares.");
-			System.out.println(
-					" # Two players alternate marking empty squares,\n   one player marking Xs and the other player marking Os.");
-			System.out.println(
-					" # The first player to get 3 of their marks in a row\n   (up, down, across, or diagonally) is the winner.");
-			System.out.println(
-					" # When all 9 squares are full, the game is over.\n   If no player has 3 marks in a row, the game ends in a tie.");
-			System.out.println("Press (1) to return to the menu.");
+			System.out.println("# The game is played on a on a 3 by 3 grid of 9 empty squares.\n"
+			+"# Two players alternate marking empty squares,\n"
+			+"  one player marking Xs and the other player marking Os.\n"
+			+"# The first player to get 3 of their marks in a row\n"
+			+"  (up, down, across, or diagonally) is the winner.\n"
+			+"# When all 9 squares are full, the game is over.\n"
+			+ " If no player has 3 marks in a row, the game ends in a tie.");
+			System.out.println("\nPress (1) to return to the menu.");
 			Scanner s2 = new Scanner(System.in);
 			int back = s2.nextInt();
 			 if (back == 1);{
@@ -51,7 +52,7 @@ public class GameMenu {
 			break;
 		default:
             System.out.println("Please, 1, 2, 3, or 4 only.");	
-		
+            s.close();
 	 
 	} 
 
