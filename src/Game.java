@@ -1,63 +1,62 @@
+import java.util.Scanner;
 
 public class Game {
 
-	// public static void game() {
+	// public static void startGame() {
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		char gamerTag = 'X';
+		boolean slotIsFull = false;
+		boolean threeInRow = false;
+		
 		GameBoard.initializeNewGame();
 		GameBoard.showGameBoard();
-		
-		char gamerTag = 'X';
-
-		String userInput = "";
 		System.out.println("First select a Row and then Column");
-		System.out.println("Select row: 2");
-		System.out.println("Select column: 3");
-		userInput = "" + 2 + 3;
 		
-		if(GameBoard.slot[convertInputToInt(userInput)-1] != ' ') {
-			System.out.println("Sorry, slot is occupied");
-		} else {
-			System.out.println("Sucess, you added your gamertag " + gamerTag);
+		while(!slotIsFull || threeInRow) {
+			boolean addSlot = false;	
+		while(!addSlot) {
+			try {
+				String userInput = selectSlot(scanner);
+				addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), gamerTag);
+			}
+			catch(ArrayIndexOutOfBoundsException ex) {
+				System.out.println("Sorry, slot does not exist.");
+			}
 		}
-		
-		
-		
-		int test1 = convertInputToInt(userInput);
-		int test2 = convertInputToInt(userInput) -1;
-		GameBoard.slot[convertInputToInt(userInput)-1] = gamerTag;
-		System.out.println("Test: " + test1);
-		System.out.println("Test: " + test2);
-		
-		
-		if(GameBoard.slot[convertInputToInt(userInput)-1] != ' ') {
-			System.out.println("Sorry, slot is occupied");
-		} else {
-			System.out.println("Sucess, you added your gamertag " + gamerTag);
-		}
-		
+		System.out.println("Computers turn");
+		GameBoard.slot[0] = 'O';
 		GameBoard.showGameBoard();
+			
+		}
 		
 	}
+	public static String selectSlot(Scanner scanner) {
+		System.out.print("Select row: ");
+		String num1 = scanner.next();
+		System.out.print("Select column: ");
+		String num2 = scanner.next();
+		String userInput = num1 + num2;
+		
+		return userInput;
+	}
 	
-	public static int convertInputToInt(String userInput){
+
+	public static int convertInputToInt(String userInput) {
 		int boardNumber = switch (userInput) {
-		case "11" -> 1;
-		case "12" -> 2;
-		case "13" -> 3;
-		
-		case "21" -> 4;
-		case "22" -> 5;
-		case "23" -> 6;
-		
-		case "31" -> 7;
-		case "32" -> 8;
-		case "33" -> 9;
+		case "11" -> 0;
+		case "12" -> 1;
+		case "13" -> 2;
+
+		case "21" -> 3;
+		case "22" -> 4;
+		case "23" -> 5;
+
+		case "31" -> 6;
+		case "32" -> 7;
+		case "33" -> 8;
 		default -> 100;
 		};
 		return boardNumber;
 	}
-	
-
-	
-	
 }
