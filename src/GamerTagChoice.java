@@ -28,8 +28,6 @@ public class GamerTagChoice {
 			char gamerTag = 'O';
 			char computerTag = 'X';
 			System.out.println("You will plays as O.");
-
 		}
 	}
 }
-
