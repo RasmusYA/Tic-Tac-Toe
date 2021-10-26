@@ -1,4 +1,3 @@
-
 public class GameBoard {
 	
 	static char[] slot = new char[9];
@@ -10,8 +9,15 @@ public class GameBoard {
 		}
 	}
 	
-	public static void AddToGameBoard(){
-		
+	public static boolean AddToGameBoard(int number, char gamerTag){
+			if(slot[number] == ' ') {
+				System.out.println("Sucess, you added your gamertag " + gamerTag + ".");
+				slot[number] = gamerTag;
+				return true;
+			} else {
+				System.out.println("Sorry, slot is occupied. Try again");
+				return false;
+			}			
 	}
 	
 
