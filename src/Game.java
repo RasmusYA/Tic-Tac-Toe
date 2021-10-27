@@ -4,7 +4,7 @@ public class Game {
 
 	public static void startGame() {
 		Scanner scanner = new Scanner(System.in);
-		
+		//Sätter spelarens och motståndarens Tag till X eller O
 		char gamerTag = GamerTagChoice.ChoosePlayer(scanner);
 		char computerTag = ' ';
 		if(gamerTag == 'X')
@@ -21,25 +21,29 @@ public class Game {
 		GameBoard.showGameBoard(); //Visar spelbrädet
 		System.out.println("First select a Row and then Column");
 		
+		//TODO --> Om alla platser är upptagna eller någon har 3 i rad så sätt boolean till false;
 		while(!slotIsFull || threeInRow) {
 			boolean addSlot = false;	
 		while(!addSlot) {
 			try {
+				//addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är upptagen eller inte.
+				//Om platsen är tom retunerar den sant.
 				String userInput = selectSlot(scanner);
 				addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), gamerTag);
 			}
+			//OM användaren matar in något annat än mellan 1-3
 			catch(ArrayIndexOutOfBoundsException ex) {
 				System.out.println("Sorry, slot does not exist.");
 			}
 		}
-		System.out.println("Computers turn");
-		GameBoard.slot[0] = 'O';
 		GameBoard.showGameBoard();
 			
 	
 		}
 		
 	}
+	// Spelar får välja rad och kolumn vart de vill lägga sin nästa
+	//spelpjäs som retunerar en sträng med rad + column
 	public static String selectSlot(Scanner scanner) {
 		System.out.print("Select row: ");
 		String num1 = scanner.next();
@@ -49,7 +53,6 @@ public class Game {
 
 		return userInput;
 	}
-	
 	//Konverterar det som användaren skriver, till exempel row: 1 och column: 3
 	//Input blir då 13, denna function konverterar detta till 2.
 	public static int convertInputToInt(String userInput) {

@@ -2,6 +2,7 @@ public class GameBoard {
 	
 	static char[] slot = new char[9];
 	
+	//Anropas i början av spelet och sätter nollar/tömmer alla slots/platser
 	public static void initializeNewGame() {
 		
 		for (int i = 0; i < slot.length; i++) {
@@ -9,6 +10,9 @@ public class GameBoard {
 		}
 	}
 	
+	//Metod för att lägga till sin spelpjäs på spelbrädet, kontrollerar om platsen är tom
+	//Om platsen är tom får man lägga sin spelpjäs, annars får man försöka igen.
+	//Retunerar sant eller falskt om man får placera sin spelpjäs
 	public static boolean AddToGameBoard(int number, char gamerTag){
 			if(slot[number] == ' ') {
 				System.out.println("Sucess, you added your gamertag " + gamerTag + ".");
@@ -20,7 +24,7 @@ public class GameBoard {
 			}			
 	}
 	
-
+	//Visar spelbrädet
 	public static void showGameBoard(){
 		System.out.println("     1   2   3\n");		
 		System.out.println("1    " + slot[0] + " | " + slot[1] + " | " + slot[2]);	
