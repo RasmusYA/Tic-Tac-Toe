@@ -36,11 +36,11 @@ public class GameMenu {
 			int back = s2.nextInt();
 			 if (back == 1);{
 				System.out.println (menu);
-				choice = s.nextLine();
+				
 			 }
 			break;
 		case "3":
-			System.out.println("        TIC-TACK-TOE\n"
+			System.out.println("        TIC-TAC-TOE\n"
 					+"Lisa...........Lead Designer\n"
 					+"Rasmus.........Lead Designer\n"
 					+"Victoria.......Lead Designer\n"
