@@ -14,18 +14,20 @@ public class EnemyPlotting {
 
 		TimeUnit.SECONDS.sleep(2);
 
-		System.out.println("\nThe enemy is plotting it's next evil move ");
+		System.out.println("\nThe enemy is plotting their next evil move \n");
 
-		TimeUnit.SECONDS.sleep(3);
+		TimeUnit.SECONDS.sleep(2);
 
 		
-		 String welcome = "\t- HAHA you honestly thought you could beat me?!\n";
+		 String welcome = "\t- HAHA you honestly thought you could beat me?!\n\n";
 		 for (int i = 0; i < welcome.length(); i++) {
 		      System.out.print(welcome.charAt(i));
 		      Thread.sleep(100);
 
 		    }
-		TimeUnit.SECONDS.sleep(2);
+		TimeUnit.SECONDS.sleep(1);
+		
+		System.out.println("The enemy added their gamertag X at 3:3 \n");
 
 		System.out.println("     1   2   3\n");
 		System.out.println("1    " + "X" + " | " + " " + " | " + " ");
