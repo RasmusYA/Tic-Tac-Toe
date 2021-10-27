@@ -5,9 +5,10 @@ public class GameMenu {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Tic-Tac-Toe!");
 		int i=1;
+		Scanner s = new Scanner(System.in);
 		do {
 		
-		Scanner s = new Scanner(System.in);
+		
 		String menu = (" O-------------------X\n"
 		+ " |Choose an Option:  |\n"
 		+ " |(1) -- Start Game  |\n"
@@ -31,14 +32,11 @@ public class GameMenu {
 			+"  (up, down, across, or diagonally) is the winner.\n"
 			+"# When all 9 squares are full, the game is over.\n"
 			+ " If no player has 3 marks in a row, the game ends in a tie.");
-			System.out.println("\nPress (1) to return to the menu.");
+			System.out.println("\nPress any number key to return to the menu.");
 			Scanner s2 = new Scanner(System.in);
-			int back = s2.nextInt();
-			 if (back == 1);{
-				System.out.println (menu);
-				
-			 }
-			break;
+			s2.nextInt();
+				 break;
+			 
 		case "3":
 			System.out.println("        TIC-TAC-TOE\n"
 					+"Lisa...........Lead Designer\n"
@@ -52,10 +50,9 @@ public class GameMenu {
 			break;
 		default:
             System.out.println("Please, 1, 2, 3, or 4 only.");	
-            s.close();
-	 
 	} 
-
+			
 } while(i==1);
+		s.close();	
 }	
 }
