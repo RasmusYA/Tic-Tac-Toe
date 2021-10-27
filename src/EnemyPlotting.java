@@ -18,8 +18,13 @@ public class EnemyPlotting {
 
 		TimeUnit.SECONDS.sleep(3);
 
-		System.out.println("\nHAHA thought you could beat me?!\n");
+		
+		 String welcome = "\t- HAHA you honestly thought you could beat me?!\n";
+		 for (int i = 0; i < welcome.length(); i++) {
+		      System.out.print(welcome.charAt(i));
+		      Thread.sleep(100);
 
+		    }
 		TimeUnit.SECONDS.sleep(2);
 
 		System.out.println("     1   2   3\n");
