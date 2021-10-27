@@ -2,14 +2,18 @@ import java.util.*;
 
 public class GameMenu {
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to Tic-Tac-Toe!");
+	public static void main(String[] args) throws InterruptedException {
+		String welcome = "Welcome to Tic-Tac-Toe!";
+		for (int i = 0; i < welcome.length(); i++) {
+		      System.out.print(welcome.charAt(i));
+		      Thread.sleep(40);
+		
+		}
 		int i=1;
 		Scanner s = new Scanner(System.in);
 		do {
 		
-		
-		String menu = (" O-------------------X\n"
+		String menu = ("\n O-------------------X\n"
 		+ " |Choose an Option:  |\n"
 		+ " |(1) -- Start Game  |\n"
 		+ " |(2) -- How to Play |\n"
@@ -17,7 +21,7 @@ public class GameMenu {
 		+ " |(4) -- Exit        |\n"
 		+ " X-------------------O");
 		System.out.println (menu);
-
+		System.out.print(">");
 		String choice = s.nextLine();
 		
 		switch (choice) {
@@ -25,14 +29,16 @@ public class GameMenu {
 			Game.startGame();
 			break;
 		case "2":
+			System.out.println("  RULES");
 			System.out.println("# The game is played on a on a 3 by 3 grid of 9 empty squares.\n"
 			+"# Two players alternate marking empty squares,\n"
 			+"  one player marking Xs and the other player marking Os.\n"
 			+"# The first player to get 3 of their marks in a row\n"
 			+"  (up, down, across, or diagonally) is the winner.\n"
 			+"# When all 9 squares are full, the game is over.\n"
-			+ " If no player has 3 marks in a row, the game ends in a tie.");
+			+ "  If no player has 3 marks in a row, the game ends in a tie.");
 			System.out.println("\nPress any number key to return to the menu.");
+			System.out.print(">");
 			Scanner s2 = new Scanner(System.in);
 			s2.nextInt();
 				 break;
