@@ -5,9 +5,9 @@ public class Game {
 	public static void startGame() {
 		Scanner scanner = new Scanner(System.in);
 		//Sätter spelarens och motståndarens Tag till X eller O
-		char gamerTag = GamerTagChoice.ChoosePlayer(scanner);
+		char playerTag = GamerTagChoice.ChoosePlayer(scanner);
 		char computerTag = ' ';
-		if(gamerTag == 'X')
+		if(playerTag == 'X')
 			computerTag = 'O';
 		else {
 			computerTag = 'X';
@@ -24,21 +24,25 @@ public class Game {
 		//TODO --> Om alla platser är upptagna eller någon har 3 i rad så sätt boolean till false;
 		while(!slotIsFull || threeInRow) {
 			boolean addSlot = false;	
+			boolean enemyAddSlot = false;
+			
 		while(!addSlot) {
 			try {
 				//addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är upptagen eller inte.
 				//Om platsen är tom retunerar den sant.
 				String userInput = selectSlot(scanner);
-				addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), gamerTag);
+				addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), playerTag);
 			}
 			//OM användaren matar in något annat än mellan 1-3
 			catch(ArrayIndexOutOfBoundsException ex) {
 				System.out.println("Sorry, slot does not exist.");
 			}
+			while(!enemyAddSlot) {
+				//Enemnys turn
+				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), computerTag);
+			}
 		}
 		GameBoard.showGameBoard();
-			
-	
 		}
 		
 	}
