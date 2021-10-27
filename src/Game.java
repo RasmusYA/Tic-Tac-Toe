@@ -22,9 +22,14 @@ public class Game {
 		System.out.println("First select a Row and then Column");
 		
 		//TODO --> Om alla platser är upptagna eller någon har 3 i rad så sätt boolean till false;
-		while(!slotIsFull || threeInRow) {
+		while(!slotIsFull) {
 			boolean addSlot = false;	
 			boolean enemyAddSlot = false;
+			
+			
+			slotIsFull = GameBoard.checkIfSlotsFull();
+			if(slotIsFull)
+				break;
 			
 		while(!addSlot) {
 			try {
@@ -37,7 +42,14 @@ public class Game {
 			catch(ArrayIndexOutOfBoundsException ex) {
 				System.out.println("Sorry, slot does not exist.");
 			}
+			
+			slotIsFull = GameBoard.checkIfSlotsFull();
+			if(slotIsFull)
+				break;
+			
+						
 			while(!enemyAddSlot) {
+				
 				//Enemnys turn
 				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), computerTag);
 			}

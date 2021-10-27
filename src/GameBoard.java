@@ -15,7 +15,6 @@ public class GameBoard {
 	//Retunerar sant eller falskt om man får placera sin spelpjäs
 	public static boolean AddToGameBoard(int number, char gamerTag){
 			if(slot[number] == ' ') {
-				System.out.println("Sucess, you added your gamertag " + gamerTag + ".");
 				slot[number] = gamerTag;
 				return true;
 			} else {
@@ -33,6 +32,16 @@ public class GameBoard {
 		System.out.println("    ---+---+---"); 
 		System.out.println("3    " + slot[6] + " | " + slot[7] + " | " + slot[8]);
 		
+	}
+	
+	public static boolean checkIfSlotsFull() {
+		//boolean isFull = false;
+		for(char empty : slot) {
+			if(empty == ' ') {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 }
