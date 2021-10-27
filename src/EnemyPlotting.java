@@ -27,7 +27,7 @@ public class EnemyPlotting {
 		    }
 		TimeUnit.SECONDS.sleep(1);
 		
-		System.out.println("The enemy added their gamertag X at 3:3 \n");
+		System.out.println("The enemy added their gamertag O at 3:3 \n");
 
 		System.out.println("     1   2   3\n");
 		System.out.println("1    " + "X" + " | " + " " + " | " + " ");
