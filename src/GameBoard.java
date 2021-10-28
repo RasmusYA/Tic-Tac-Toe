@@ -1,3 +1,4 @@
+
 public class GameBoard {
 	
 	static char[] slot = new char[9];
@@ -35,7 +36,6 @@ public class GameBoard {
 	}
 	
 	public static boolean checkIfSlotsFull() {
-		//boolean isFull = false;
 		for(char empty : slot) {
 			if(empty == ' ') {
 				return false;
@@ -44,4 +44,29 @@ public class GameBoard {
 		return true;
 	}
 	
+	public static boolean checkWinner(char gameTag) {
+		char tag = gameTag;
+
+		//Horisontellt
+		if((slot[0] == tag && slot[1] == tag && slot[2] == tag) ||
+			(slot[3] == tag && slot[4] == tag && slot[5] == tag) ||
+			(slot[6] == tag && slot[7] == tag && slot[8] == tag) ||
+			//Vertikalt
+			(slot[0] == tag && slot[3] == tag && slot[6] == tag) ||
+			(slot[1] == tag && slot[4] == tag && slot[7] == tag) ||
+			(slot[2] == tag && slot[5] == tag && slot[8] == tag) ||
+			//Diagonalt
+			(slot[0] == tag && slot[4] == tag && slot[8] == tag) ||
+			(slot[2] == tag && slot[4] == tag && slot[6] == tag)) {
+			System.out.println("Player " + tag + " is the Winner!");
+			return true;
+		}
+	return false;
+	}
+		
+		
+		
+		
+		
+		
 }

@@ -6,28 +6,26 @@ public class Game {
 		Scanner scanner = new Scanner(System.in);
 		// Sätter spelarens och motståndarens Tag till X eller O
 		char playerTag = GamerTagChoice.ChoosePlayer(scanner);
-		char computerTag = ' ';
+		char enemyTag = ' ';
 		if (playerTag == 'X')
-			computerTag = 'O';
+			enemyTag = 'O';
 		else {
-			computerTag = 'X';
+			enemyTag = 'X';
 		}
-
-		boolean slotIsFull = false; // Tillfällig variabel för test
-		boolean threeInRow = false; // Tillfällig variabel för test
 
 		GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
 		GameBoard.showGameBoard(); // Visar spelbrädet
 		System.out.println("First select a Row and then Column");
 
-		// TODO --> Om alla platser är upptagna eller någon har 3 i rad så sätt boolean
-		// till false;
-		while (!slotIsFull) {
+		//Avbryter spelet som spelbrädet är fullt
+		while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
 
-			// Stops game if all slots in board are full
-			if (GameBoard.checkIfSlotsFull())
+			
+			
+			// Bryter spelet om alla platser på spelbrädet är fulla
+			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
 				break;
 
 			while (!addSlot) {
@@ -43,24 +41,26 @@ public class Game {
 					System.out.println("Sorry, slot does not exist.");
 				}
 
-				// Stops game if all slots in board are full
+				GameBoard.checkWinner(playerTag);
+				GameBoard.checkWinner(enemyTag);
+				// Bryter spelet om alla platser på spelbrädet är fulla 
 				if (GameBoard.checkIfSlotsFull())
 					break;
 
-				// Enemys turn
+				// Enemy turn
 				while (!enemyAddSlot) {
-					enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), computerTag);
+					enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag);
 				}
 			}
 			GameBoard.showGameBoard();
 		}
 
 		
-		// Game Over
+		//TODO Lägg till något snitsigt när spelet är över
 		System.out.println("Game Over");
 
 		
-		// Present winner/looser/ draw or tie
+		//TODO Present winner/looser/ draw or tie
 
 		
 	}

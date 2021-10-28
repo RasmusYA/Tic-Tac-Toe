@@ -48,7 +48,7 @@ public class GameMenu {
 					+"Lisa...........Lead Designer\n"
 					+"Rasmus.........Lead Designer\n"
 					+"Victoria.......Lead Designer\n"
-					+"Oskar...............Designer");
+					+"Oskar............UX Designer");
 			break;
 		case "4":
 			System.out.println("Program shutdown. Goodbye!");
