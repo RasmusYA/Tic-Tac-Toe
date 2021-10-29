@@ -21,7 +21,6 @@ public class EnemyLines {
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemySass = enemyLines[randomNumber];
 		
-
 		 for (int i = 0; i < enemySass.length(); i++) {
 		      System.out.print(enemySass.charAt(i));
 		      Thread.sleep(50);
