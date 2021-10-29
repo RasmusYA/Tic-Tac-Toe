@@ -35,6 +35,7 @@ public class EnemyLines {
 			Thread.sleep(50);
 		}
 		System.out.println();
+		TimeUnit.SECONDS.sleep(1);
 	
     }
 }

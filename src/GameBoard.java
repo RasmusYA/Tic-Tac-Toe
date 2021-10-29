@@ -61,15 +61,9 @@ public class GameBoard {
 			//Diagonalt
 			(slot[0] == tag && slot[4] == tag && slot[8] == tag) ||
 			(slot[2] == tag && slot[4] == tag && slot[6] == tag)) {
-			System.out.println("Player " + tag + " is the Winner!");
 			return true;
 		}
 	return false;
-	}
-		
-		
-		
-		
-		
+	}		
 		
 }
