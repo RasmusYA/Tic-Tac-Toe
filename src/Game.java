@@ -43,18 +43,6 @@ public class Game {
 				
 				GameBoard.showGameBoard();
 
-				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-				if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
-					break;
-				
-				
-
-				// Enemy turn
-				while (!enemyAddSlot) {
-					enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag);
-				}
-
-
 			}
 			
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
