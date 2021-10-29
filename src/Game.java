@@ -39,11 +39,9 @@ public class Game {
 					//scanner.nextLine(); // ------- TEST -------
 					System.out.println("Sorry, slot does not exist.");
 				}
-
-				
-				GameBoard.showGameBoard();
-
 			}
+			
+			GameBoard.showGameBoard();
 			
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
@@ -51,7 +49,6 @@ public class Game {
 			
 			//Repliker från fienden
 			EnemyLines.EnemySass();
-		
 			
 			// Enemy turn
 			while (!enemyAddSlot) {
