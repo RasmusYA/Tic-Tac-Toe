@@ -39,6 +39,10 @@ public class Game {
 					//scanner.nextLine(); // ------- TEST -------
 					System.out.println("Sorry, slot does not exist.");
 				}
+
+				
+				GameBoard.showGameBoard();
+
 			}
 			
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
