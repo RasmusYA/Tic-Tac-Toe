@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class EnemyLines {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void EnemySass(String[] args) throws InterruptedException {
 
 		Random r = new Random();
 
