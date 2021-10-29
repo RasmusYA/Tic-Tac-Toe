@@ -23,7 +23,7 @@ public class EnemyLines {
 		String enemySass = enemyLines[randomNumber];
 		
 		System.out.println();
-	    System.out.println("The enemy is plotting their next evil move");
+	    System.out.println("The enemy is plotting their next evil move:");
 	    TimeUnit.SECONDS.sleep(2);
 		
 		System.out.println();
