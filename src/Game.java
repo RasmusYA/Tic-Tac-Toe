@@ -21,9 +21,9 @@ public class Game {
 		while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
-
+			
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
+			if (GameEndCheck.EndCheck(playerTag,enemyTag))
 				break;
 
 			while (!addSlot) {
@@ -45,15 +45,9 @@ public class Game {
 			}
 
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-			if (GameBoard.checkWinner(playerTag)) {
-				System.out.println("\tYou defeated the evil! \nCongrtulation!");
-
-			} else if (GameBoard.checkWinner(enemyTag)) {
-				System.out.println("the evil has won!");
-
-			} else if (GameBoard.checkIfSlotsFull()) {
+			if (GameEndCheck.EndCheck(playerTag,enemyTag))
 				break;
-			}
+			
 
 			// Repliker från fienden
 			EnemyLines.EnemySass();
