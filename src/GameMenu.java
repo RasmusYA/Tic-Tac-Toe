@@ -44,6 +44,12 @@ public class GameMenu {
 				 break;
 			 
 		case "3":
+			String title = "TIC-TAC-TOE";
+			for (int j = 0; j < welcome.length(); j++) {
+			      System.out.print(title.charAt(j));
+			      Thread.sleep(40);
+			}
+			
 			System.out.println("        TIC-TAC-TOE\n"
 					+"Lisa...........Lead Designer\n"
 					+"Rasmus.........Lead Designer\n"
