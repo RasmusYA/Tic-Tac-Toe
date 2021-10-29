@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class EnemyLines {
 
@@ -20,10 +21,20 @@ public class EnemyLines {
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemySass = enemyLines[randomNumber];
+		
+//		System.out.println("The enemy is plotting their next evil move");
+//		TimeUnit.SECONDS.sleep(2);
+		
+		System.out.println();
+		System.out.print("\t");
+		
 
 		for (int i = 0; i < enemySass.length(); i++) {
 			System.out.print(enemySass.charAt(i));
 			Thread.sleep(50);
 		}
+		System.out.println();
+		System.out.println();
+		
     }
 }
