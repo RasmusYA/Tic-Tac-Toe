@@ -1,0 +1,5 @@
+RULES
+# The game is played on a on a 3 by 3 grid of 9 empty squares
+# Two players alternate marking empty squares one player marking Xs and the other player marking Os.
+# The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.
+# When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.

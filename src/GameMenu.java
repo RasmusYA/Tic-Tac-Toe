@@ -1,8 +1,9 @@
+import java.io.*;
 import java.util.*;
 
 public class GameMenu {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException{
 		String welcome = "Welcome to Tic-Tac-Toe!";
 		for (int i = 0; i < welcome.length(); i++) {
 		      System.out.print(welcome.charAt(i));
@@ -28,15 +29,26 @@ public class GameMenu {
 		case "1":
 			Game.startGame();
 			break;
-		case "2":
-			System.out.println("  RULES");
-			System.out.println("# The game is played on a on a 3 by 3 grid of 9 empty squares.\n"
-			+"# Two players alternate marking empty squares,\n"
-			+"  one player marking Xs and the other player marking Os.\n"
-			+"# The first player to get 3 of their marks in a row\n"
-			+"  (up, down, across, or diagonally) is the winner.\n"
-			+"# When all 9 squares are full, the game is over.\n"
-			+ "  If no player has 3 marks in a row, the game ends in a tie.");
+		case "2": var input = new BufferedReader (new FileReader("C:\\Users\\oskar\\git\\Tic-Tac-Toe\\Rules"));
+		int radNr = 0;
+		while (true) {
+			String rad = input.readLine();
+			if (rad == null)
+				break;
+			radNr++;
+			System.out.println(radNr + ": " + rad);
+		}
+		//String t = input.readLine();
+					//System.out.print(t);
+					
+			//System.out.println("  RULES");
+			//System.out.println("# The game is played on a on a 3 by 3 grid of 9 empty squares.\n"
+			//+"# Two players alternate marking empty squares,\n"
+			//+"  one player marking Xs and the other player marking Os.\n"
+			//+"# The first player to get 3 of their marks in a row\n"
+			//+"  (up, down, across, or diagonally) is the winner.\n"
+			//+"# When all 9 squares are full, the game is over.\n"
+			//+ "  If no player has 3 marks in a row, the game ends in a tie.");
 			System.out.println("\nPress any number key to return to the menu.");
 			System.out.print(">");
 			Scanner s2 = new Scanner(System.in);
@@ -44,6 +56,12 @@ public class GameMenu {
 				 break;
 			 
 		case "3":
+			String title = "TIC-TAC-TOE";
+			for (int j = 0; j < welcome.length(); j++) {
+			      System.out.print(title.charAt(j));
+			      Thread.sleep(40);
+			}
+			
 			System.out.println("        TIC-TAC-TOE\n"
 					+"Lisa...........Lead Designer\n"
 					+"Rasmus.........Lead Designer\n"
@@ -60,5 +78,7 @@ public class GameMenu {
 			
 } while(i==1);
 		s.close();	
+		
+		
 }	
 }
