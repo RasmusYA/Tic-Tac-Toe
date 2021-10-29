@@ -10,7 +10,7 @@ public class EnemyLines {
 		String[] enemyLines = new String[10];
 		enemyLines[0] = "- HAHA, you thought you could beat me?!";
 		enemyLines[1] = "- You fool! Watch this!";
-		enemyLines[2] = "- You underestimate the power of the evil!";
+		enemyLines[2] = "- You underestimate the power of evil!";
 		enemyLines[3] = "- My next move is gonnan blow your mind!";
 		enemyLines[4] = "- You got nothing on me!";
 		enemyLines[5] = "- MOHAHAHA";

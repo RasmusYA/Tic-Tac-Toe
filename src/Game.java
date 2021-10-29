@@ -61,9 +61,8 @@ public class Game {
 		}
 
 		// TODO Lägg till något snitsigt när spelet är över
-		System.out.println("Game Over");
-
 		// TODO Present winner/looser/ draw or tie
+		System.out.print("Play again? y/n ");
 
 	}
 
