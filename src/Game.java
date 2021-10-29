@@ -17,7 +17,7 @@ public class Game {
 		GameBoard.showGameBoard(); // Visar spelbrädet
 		System.out.println("First select a Row and then Column");
 
-		// Avbryter spelet som spelbrädet är fullt
+		//Spel-loop
 		while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
@@ -32,38 +32,26 @@ public class Game {
 					// upptagen eller inte.
 					// Om platsen är tom retunerar den sant.
 					String userInput = selectSlot(scanner);
-					addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), playerTag);
+					addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), playerTag, true);
 				}
 				// OM användaren matar in något annat än mellan 1-3
 				catch (ArrayIndexOutOfBoundsException ex) {
-					scanner.nextLine(); // ------- TEST -------
+					//scanner.nextLine(); // ------- TEST -------
 					System.out.println("Sorry, slot does not exist.");
 				}
-
-
-				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-				if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
-					break;
-				
-
-				// Enemy turn
-				while (!enemyAddSlot) {
-					enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag);
-				}
-
 			}
 			
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
 				break;
 			
-			//Testa lägg till enemyLines här
+			//Repliker från fienden
 			EnemyLines.EnemySass();
 		
 			
 			// Enemy turn
 			while (!enemyAddSlot) {
-				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag);
+				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
 			}
 
 			GameBoard.showGameBoard();
