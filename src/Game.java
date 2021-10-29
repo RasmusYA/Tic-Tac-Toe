@@ -17,13 +17,11 @@ public class Game {
 		GameBoard.showGameBoard(); // Visar spelbrädet
 		System.out.println("First select a Row and then Column");
 
-		//Avbryter spelet som spelbrädet är fullt
+		// Avbryter spelet som spelbrädet är fullt
 		while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
 
-			
-			
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
 				break;
@@ -41,27 +39,27 @@ public class Game {
 					scanner.nextLine(); // ------- TEST -------
 					System.out.println("Sorry, slot does not exist.");
 				}
-
-				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-				if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
-					break;
-
-				// Enemy turn
-				while (!enemyAddSlot) {
-					enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag);
-				}
 			}
+			
+			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
+			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
+				break;
+			
+			//Testa lägg till enemyLines här
+			
+			// Enemy turn
+			while (!enemyAddSlot) {
+				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag);
+			}
+
 			GameBoard.showGameBoard();
 		}
 
-		
-		//TODO Lägg till något snitsigt när spelet är över
+		// TODO Lägg till något snitsigt när spelet är över
 		System.out.println("Game Over");
 
-		
-		//TODO Present winner/looser/ draw or tie
+		// TODO Present winner/looser/ draw or tie
 
-		
 	}
 
 	// Spelar får välja rad och kolumn vart de vill lägga sin nästa
