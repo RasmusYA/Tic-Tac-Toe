@@ -24,7 +24,7 @@ public class Game {
 
 			
 			
-			// Bryter spelet om alla platser på spelbrädet är fulla
+			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
 				break;
 
@@ -38,13 +38,12 @@ public class Game {
 				}
 				// OM användaren matar in något annat än mellan 1-3
 				catch (ArrayIndexOutOfBoundsException ex) {
+					scanner.nextLine(); // ------- TEST -------
 					System.out.println("Sorry, slot does not exist.");
 				}
 
-				GameBoard.checkWinner(playerTag);
-				GameBoard.checkWinner(enemyTag);
-				// Bryter spelet om alla platser på spelbrädet är fulla 
-				if (GameBoard.checkIfSlotsFull())
+				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
+				if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
 					break;
 
 				// Enemy turn
