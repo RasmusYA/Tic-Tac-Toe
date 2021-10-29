@@ -22,7 +22,7 @@ public class EnemyPlotting {
 		 String welcome = "\t- HAHA you honestly thought you could beat me?!\n\n";
 		 for (int i = 0; i < welcome.length(); i++) {
 		      System.out.print(welcome.charAt(i));
-		      Thread.sleep(100);
+		      Thread.sleep(50);
 
 		    }
 		TimeUnit.SECONDS.sleep(1);

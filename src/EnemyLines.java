@@ -1,8 +1,9 @@
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class EnemyLines {
 
-	public static void main(String[] args) {
+	public static void EnemySass() throws InterruptedException {
 
 		Random r = new Random();
 
@@ -19,7 +20,21 @@ public class EnemyLines {
 		enemyLines[9] = "- Tic tack TAKE DOWN!";
 
 		int randomNumber = r.nextInt(enemyLines.length);
-		System.out.println(enemyLines[randomNumber]);
+		String enemySass = enemyLines[randomNumber];
+		
+//		System.out.println("The enemy is plotting their next evil move");
+//		TimeUnit.SECONDS.sleep(2);
+		
+		System.out.println();
+		System.out.print("\t");
+		
 
-	}
+		for (int i = 0; i < enemySass.length(); i++) {
+			System.out.print(enemySass.charAt(i));
+			Thread.sleep(50);
+		}
+		System.out.println();
+		System.out.println();
+		
+    }
 }
