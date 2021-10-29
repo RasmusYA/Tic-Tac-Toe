@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class EnemyLines {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		Random r = new Random();
 
@@ -19,7 +19,13 @@ public class EnemyLines {
 		enemyLines[9] = "- Tic tack TAKE DOWN!";
 
 		int randomNumber = r.nextInt(enemyLines.length);
-		System.out.println(enemyLines[randomNumber]);
+		String enemySass = enemyLines[randomNumber];
+		
 
+		 for (int i = 0; i < enemySass.length(); i++) {
+		      System.out.print(enemySass.charAt(i));
+		      Thread.sleep(50);
+
+		 }
 	}
 }
