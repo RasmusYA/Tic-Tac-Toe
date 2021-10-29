@@ -17,7 +17,7 @@ public class Game {
 		GameBoard.showGameBoard(); // Visar spelbrädet
 		System.out.println("First select a Row and then Column");
 
-		//Spel-loop
+		// Spel-loop
 		while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
@@ -36,23 +36,28 @@ public class Game {
 				}
 				// OM användaren matar in något annat än mellan 1-3
 				catch (ArrayIndexOutOfBoundsException ex) {
-					//scanner.nextLine(); // ------- TEST -------
+					// scanner.nextLine(); // ------- TEST -------
 					System.out.println("Sorry, slot does not exist.");
 				}
 
-				
 				GameBoard.showGameBoard();
 
 			}
-			
+
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-			if (GameBoard.checkIfSlotsFull() || GameBoard.checkWinner(playerTag) || GameBoard.checkWinner(enemyTag))
+			if (GameBoard.checkWinner(playerTag)) {
+				System.out.println("\tYou defeated the evil! \nCongrtulation!");
+
+			} else if (GameBoard.checkWinner(enemyTag)) {
+				System.out.println("the evil has won!");
+
+			} else if (GameBoard.checkIfSlotsFull()) {
 				break;
-			
-			//Repliker från fienden
+			}
+
+			// Repliker från fienden
 			EnemyLines.EnemySass();
-		
-			
+
 			// Enemy turn
 			while (!enemyAddSlot) {
 				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
@@ -63,7 +68,6 @@ public class Game {
 
 		// TODO Lägg till något snitsigt när spelet är över
 		System.out.println("Game Over");
-		
 
 		// TODO Present winner/looser/ draw or tie
 
