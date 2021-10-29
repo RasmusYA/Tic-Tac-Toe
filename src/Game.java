@@ -40,9 +40,9 @@ public class Game {
 					System.out.println("Sorry, slot does not exist.");
 				}
 
-				GameBoard.showGameBoard();
-
 			}
+			GameBoard.showGameBoard();
+			
 
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 			if (GameEndCheck.EndCheck(playerTag,enemyTag))
@@ -61,9 +61,8 @@ public class Game {
 		}
 
 		// TODO Lägg till något snitsigt när spelet är över
-		System.out.println("Game Over");
-
 		// TODO Present winner/looser/ draw or tie
+		System.out.print("Play again? y/n ");
 
 	}
 
