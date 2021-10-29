@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class EnemyLines {
 
-	public static void EnemySass(String[] args) throws InterruptedException {
+	public static void EnemySass() throws InterruptedException {
 
 		Random r = new Random();
 
@@ -20,11 +20,10 @@ public class EnemyLines {
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemySass = enemyLines[randomNumber];
-		
-		 for (int i = 0; i < enemySass.length(); i++) {
-		      System.out.print(enemySass.charAt(i));
-		      Thread.sleep(50);
 
-		 }
-	}
+		for (int i = 0; i < enemySass.length(); i++) {
+			System.out.print(enemySass.charAt(i));
+			Thread.sleep(50);
+		}
+    }
 }
