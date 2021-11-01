@@ -5,6 +5,7 @@ public class Game {
 	public static void startGame() throws InterruptedException {
 		Scanner scanner = new Scanner(System.in);
 		// Sätter spelarens och motståndarens Tag till X eller O
+		boolean playAgain = true;
 		char playerTag = GamerTagChoice.ChoosePlayer(scanner);
 		char enemyTag = ' ';
 		if (playerTag == 'X')
@@ -18,7 +19,8 @@ public class Game {
 		System.out.println("First select a Row and then Column");
 
 		// Spel-loop
-		while (true) {
+		while (playAgain) {
+			while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
 			
@@ -58,13 +60,21 @@ public class Game {
 			}
 
 			GameBoard.showGameBoard();
+			}
+			System.out.println("Wanna play again? Press Y for yes and N for no: ");
+			String option = scanner.next();
+			option = option.toUpperCase();
+			
+			if (option.equals("N")) {
+				playAgain = false;
+				System.out.println("your game will now end, welcome back! ");
+				
+			}
 		}
 
-		// TODO Lägg till något snitsigt när spelet är över
-		// TODO Present winner/looser/ draw or tie
-		System.out.print("Play again? y/n ");
-
 	}
+
+	
 
 	// Spelar får välja rad och kolumn vart de vill lägga sin nästa
 	// spelpjäs som retunerar en sträng med rad + column
