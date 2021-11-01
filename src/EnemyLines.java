@@ -21,14 +21,13 @@ public class EnemyLines {
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemySass = enemyLines[randomNumber];
-		
+
 		System.out.println();
-	    System.out.println("The enemy is plotting their next evil move:");
-	    TimeUnit.SECONDS.sleep(2);
-		
+		System.out.println("The enemy is plotting their next evil move:");
+		TimeUnit.SECONDS.sleep(2);
+
 		System.out.println();
 		System.out.print("\t");
-		
 
 		for (int i = 0; i < enemySass.length(); i++) {
 			System.out.print(enemySass.charAt(i));
@@ -36,13 +35,13 @@ public class EnemyLines {
 		}
 		System.out.println();
 		TimeUnit.SECONDS.sleep(1);
-	
-    }
-	
+
+	}
+
 	public static void EnemyLoser() throws InterruptedException {
-		
+
 		Random r = new Random();
-		
+
 		String[] enemyLines = new String[10];
 		enemyLines[0] = "- NooooOOOOoooOOOOOooo!";
 		enemyLines[1] = "- You son of a bitch!!";
@@ -57,11 +56,9 @@ public class EnemyLines {
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemyLoser = enemyLines[randomNumber];
-		
-		
+
 		System.out.println();
 		System.out.print("\t");
-		
 
 		for (int i = 0; i < enemyLoser.length(); i++) {
 			System.out.print(enemyLoser.charAt(i));
@@ -70,5 +67,37 @@ public class EnemyLines {
 		System.out.println();
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println();
+	}
+
+	public static void EnemyWinner() throws InterruptedException {
+
+		Random r = new Random();
+
+		String[] enemyLines = new String[3];
+		enemyLines[0] = "- BOW DOWN TO ME LOSER!";
+		enemyLines[1] = "- Mohaha, child's play!";
+		enemyLines[2] = "- Looo-ho-ho-oser!";
+//		enemyLines[3] = "- ";
+//		enemyLines[4] = "- ";
+//		enemyLines[5] = "- ";
+//		enemyLines[6] = "- ";
+//		enemyLines[7] = "- ";
+//		enemyLines[8] = "- ";
+//		enemyLines[9] = "- ";
+
+		int randomNumber = r.nextInt(enemyLines.length);
+		String enemyLoser = enemyLines[randomNumber];
+
+		System.out.println();
+		System.out.print("\t");
+
+		for (int i = 0; i < enemyLoser.length(); i++) {
+			System.out.print(enemyLoser.charAt(i));
+			Thread.sleep(50);
+		}
+		System.out.println();
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println();
+
 	}
 }
