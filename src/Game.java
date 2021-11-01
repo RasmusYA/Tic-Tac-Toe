@@ -50,7 +50,6 @@ public class Game {
 			}
 			GameBoard.showGameBoard();
 			
-
 			// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 			if (GameEndCheck.EndCheck(playerTag,enemyTag))
 				break;
