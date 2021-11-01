@@ -71,7 +71,7 @@ public class GameMenu {
 			
 		case "3":
 			try {
-				var input = new BufferedReader (new FileReader("rules.txt"));
+				var input = new BufferedReader (new FileReader("Rules.txt"));
 			
 		int radNr = 0;
 		while (true) {
