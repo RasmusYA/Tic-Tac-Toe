@@ -71,4 +71,31 @@ public class EnemyLines {
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println();
 	}
+	
+	
+	public static void EnemyWinner() throws InterruptedException {
+		Random r = new Random();
+		
+		String[] enemyLines = new String[3];
+		enemyLines[0] = "- BOW DOWN TO ME LOSER!";
+		enemyLines[1] = "- Mohaha, child's play!";
+		enemyLines[2] = "- Looo-ho-ho-oser!";
+
+		int randomNumber = r.nextInt(enemyLines.length);
+		String enemyLoser = enemyLines[randomNumber];
+		
+		
+		System.out.println();
+		System.out.print("\t");
+		
+
+		for (int i = 0; i < enemyLoser.length(); i++) {
+			System.out.print(enemyLoser.charAt(i));
+			Thread.sleep(50);
+		}
+		System.out.println();
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println();
+	}
+	
 }

@@ -24,6 +24,7 @@ public class GameEndCheck {
 					+ " |            You lost..         |\n"
 					+ " | Long live the evil conqueror! |\n"
 					+ " X-------------------------------O");
+			EnemyLines.EnemyWinner();
 			Score(playerWin, enemyWin, tie);
 			return true;
 
