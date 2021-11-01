@@ -13,7 +13,7 @@ public class GameEndCheck {
 					+ " | You defeated the evil! |\n"
 					+ " |     Congratulation!!   |\n"
 					+ " X------------------------O");
-			EnemyLines.EnemyLoser();
+			EnemyLines.EnemyLoserLines();
 			Score(playerWin, enemyWin, tie);
 			return true;
 
@@ -24,6 +24,7 @@ public class GameEndCheck {
 					+ " |            You lost..         |\n"
 					+ " | Long live the evil conqueror! |\n"
 					+ " X-------------------------------O");
+			EnemyLines.EnemyWinnerLines();
 			Score(playerWin, enemyWin, tie);
 			return true;
 

@@ -39,7 +39,7 @@ public class EnemyLines {
 	
     }
 	
-	public static void EnemyLoser() throws InterruptedException {
+	public static void EnemyLoserLines() throws InterruptedException {
 		
 		Random r = new Random();
 		
@@ -54,6 +54,39 @@ public class EnemyLines {
 		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
 		enemyLines[8] = "- I'll be back stronger than ever!";
 		enemyLines[9] = "- Rematch NOW, coward!!";
+
+		int randomNumber = r.nextInt(enemyLines.length);
+		String enemyLoser = enemyLines[randomNumber];
+		
+		
+		System.out.println();
+		System.out.print("\t");
+		
+
+		for (int i = 0; i < enemyLoser.length(); i++) {
+			System.out.print(enemyLoser.charAt(i));
+			Thread.sleep(50);
+		}
+		System.out.println();
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println();
+	}
+	
+	public static void EnemyWinnerLines() throws InterruptedException {
+		
+		Random r = new Random();
+
+		String[] enemyLines = new String[6];
+		enemyLines[0] = "- LONG LIVE ME!";
+		enemyLines[1] = "- Welcome to your demise!!";
+		enemyLines[2] = "- HAHA LOOOOOOSER!!";
+		enemyLines[3] = "- Wow, you really suck!";
+		enemyLines[4] = "- Evil always win!";
+		enemyLines[5] = "- From hero to zero! How does it feel?";
+//		enemyLines[6] = "- Fucking hell..";
+//		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
+//		enemyLines[8] = "- I'll be back stronger than ever!";
+//		enemyLines[9] = "- Rematch NOW, coward!!";
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemyLoser = enemyLines[randomNumber];

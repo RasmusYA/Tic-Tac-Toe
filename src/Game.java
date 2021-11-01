@@ -20,7 +20,7 @@ public class Game {
 			MusicPlayer musicPlayer = new MusicPlayer();
 
 		}
-
+		
 		GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
 		GameBoard.showGameBoard(); // Visar spelbrädet
 		System.out.println("First select a Row and then Column");
