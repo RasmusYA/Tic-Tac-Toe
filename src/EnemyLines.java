@@ -38,4 +38,36 @@ public class EnemyLines {
 		TimeUnit.SECONDS.sleep(1);
 	
     }
+	
+	public static void EnemyLoser() throws InterruptedException {
+		
+		Random r = new Random();
+		
+		String[] enemyLines = new String[10];
+		enemyLines[0] = "- NooooOOOOoooOOOOOooo!";
+		enemyLines[1] = "- You son of a bitch!!";
+		enemyLines[2] = "- Face me aganin and I will CRUSH YOU!";
+		enemyLines[3] = "- Beginner's luck!";
+		enemyLines[4] = "- You cheated.. I KNOW you cheated!";
+		enemyLines[5] = "- The evil vill rise again!";
+		enemyLines[6] = "- Fucking hell..";
+		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
+		enemyLines[8] = "- I'll be back stronger than ever!";
+		enemyLines[9] = "- Rematch NOW, coward!!";
+
+		int randomNumber = r.nextInt(enemyLines.length);
+		String enemyLoser = enemyLines[randomNumber];
+		
+		
+		System.out.println();
+		System.out.print("\t");
+		
+
+		for (int i = 0; i < enemyLoser.length(); i++) {
+			System.out.print(enemyLoser.charAt(i));
+			Thread.sleep(50);
+		}
+		System.out.println();
+		TimeUnit.SECONDS.sleep(1);
+	}
 }

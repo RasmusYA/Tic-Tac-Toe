@@ -1,13 +1,14 @@
 
 public class GameEndCheck {
 
-	public static boolean EndCheck(char playerTag, char enemyTag) {
+	public static boolean EndCheck(char playerTag, char enemyTag) throws InterruptedException {
 		int playerWin = 0; int enemyWin = 0; int tie = 0;
 	
 		
 		// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 		if (GameBoard.checkWinner(playerTag)) {
 			playerWin++;
+			EnemyLines.EnemyLoser();
 			System.out.println(
 					"\n O------------------------X\n"
 					+ " | You defeated the evil! |\n"
