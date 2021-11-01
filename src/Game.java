@@ -21,12 +21,12 @@ public class Game {
 			MusicPlayer musicPlayer = new MusicPlayer();
 		}
 		
-		GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
-		GameBoard.showGameBoard(); // Visar spelbrädet
-		System.out.println("First select a Row and then Column");
 
 		// Spel-loop
 		while (playAgain) {
+			GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
+			GameBoard.showGameBoard(); // Visar spelbrädet
+			System.out.println("First select a Row and then Column");
 			while (true) {
 			boolean addSlot = false;
 			boolean enemyAddSlot = false;
@@ -65,7 +65,6 @@ public class Game {
 			while (!enemyAddSlot) {
 				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
 			}
-
 			GameBoard.showGameBoard();
 			}
 			System.out.println("Wanna play again? Press Y for yes and N for no: ");
@@ -80,8 +79,6 @@ public class Game {
 		}
 
 	}
-
-	
 
 	// Spelar får välja rad och kolumn vart de vill lägga sin nästa
 	// spelpjäs som retunerar en sträng med rad + column
