@@ -1,7 +1,7 @@
 
 public class GameEndCheck {
 
-	public static boolean EndCheck(char playerTag, char enemyTag) {
+	public static boolean EndCheck(char playerTag, char enemyTag) throws InterruptedException {
 		int playerWin = 0; int enemyWin = 0; int tie = 0;
 	
 		
@@ -13,6 +13,7 @@ public class GameEndCheck {
 					+ " | You defeated the evil! |\n"
 					+ " |     Congratulation!!   |\n"
 					+ " X------------------------O");
+			EnemyLines.EnemyLoserLines();
 			Score(playerWin, enemyWin, tie);
 			return true;
 
@@ -23,6 +24,8 @@ public class GameEndCheck {
 					+ " |            You lost..         |\n"
 					+ " | Long live the evil conqueror! |\n"
 					+ " X-------------------------------O");
+
+			EnemyLines.EnemyWinnerLines();
 			Score(playerWin, enemyWin, tie);
 			return true;
 
