@@ -27,21 +27,21 @@ public class EnemyAI {
 			} else if (slot[7] == enemyTag && slot[8] == enemyTag) {
 				slot[6] = enemyTag;
 				
-			// enemy winning kolum 1
+			// enemy winning column 1
 			} else if (slot[0] == enemyTag && slot[3] == enemyTag) {
 		    	slot[6] = enemyTag;
 			} else if (slot[0] == enemyTag && slot[6] == enemyTag) {
 		    	slot[3] = enemyTag;
 			} else if (slot[3] == enemyTag && slot[6] == enemyTag) {
 		    	slot[0] = enemyTag;
-		    // enemy winning kolum 2
+		    // enemy winning column 2
 			} else if (slot[1] == enemyTag && slot[4] == enemyTag) {
 		    	slot[7] = enemyTag;
 			} else if (slot[1] == enemyTag && slot[7] == enemyTag) {
 		    	slot[4] = enemyTag;
 			} else if (slot[4] == enemyTag && slot[7] == enemyTag) {
 		    	slot[1] = enemyTag;
-		    // enemy winning kolum 3
+		    // enemy winning column 3
 			} else if (slot[2] == enemyTag && slot[5] == enemyTag) {
 		    	slot[8] = enemyTag;
 			} else if (slot[2] == enemyTag && slot[8] == enemyTag) {
@@ -49,14 +49,14 @@ public class EnemyAI {
 			} else if (slot[5] == enemyTag && slot[8] == enemyTag) {
 		    	slot[2] = enemyTag;
 		    	
-		    // enemy winning diagonaly 1
+		    // enemy winning diagonally  1
 			} else if (slot[0] == enemyTag && slot[4] == enemyTag) {
 		    	slot[8] = enemyTag;
 			} else if (slot[0] == enemyTag && slot[8] == enemyTag) {
 		    	slot[4] = enemyTag;
 			} else if (slot[4] == enemyTag && slot[8] == enemyTag) {
 		    	slot[0] = enemyTag;
-		    // enemy winning diagonaly 2
+		    // enemy winning diagonally  2
 			} else if (slot[2] == enemyTag && slot[4] == enemyTag) {
 		    	slot[6] = enemyTag;
 			} else if (slot[2] == enemyTag && slot[6] == enemyTag) {
