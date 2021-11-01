@@ -1,8 +1,11 @@
 
 public class EnemyAI {
 
-	public static void EnemyWinningMoves(char[] showGameBoard, char initializeNewGame, char[] slot, char playerTag,
+	public static void EnemyWinningMoves(char[] slot, char playerTag,
 			char enemyTag) {
+		
+GameBoard.showGameBoard();
+GameBoard.initializeNewGame();
 
 		for (int i = 0; i < slot.length; i++) {
 			// enemy winning row 1
