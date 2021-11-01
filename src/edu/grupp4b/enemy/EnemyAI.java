@@ -1,3 +1,5 @@
+package edu.grupp4b.enemy;
+import edu.grupp4b.gameboard.GameBoard;
 
 public class EnemyAI {
 

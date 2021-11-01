@@ -1,3 +1,4 @@
+package edu.grupp4b.enemy;
 import java.util.Random;
 
 public class Enemy {
