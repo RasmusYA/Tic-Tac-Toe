@@ -12,6 +12,13 @@ public class Game {
 		else {
 			enemyTag = 'X';
 		}
+		System.out.println("Music? y/n ");
+		char musicInput = scanner.next().charAt(0);
+		if(musicInput == 'y'){
+			MusicPlayer.playTheTune("262940.wav");
+			MusicPlayer musicPlayer = new MusicPlayer();
+			
+		}
 
 		GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
 		GameBoard.showGameBoard(); // Visar spelbrädet
