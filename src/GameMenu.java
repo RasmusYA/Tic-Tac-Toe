@@ -29,7 +29,10 @@ public class GameMenu {
 		case "1":
 			Game.startGame();
 			break;
-		case "2": var input = new BufferedReader (new FileReader("C:\\Users\\oskar\\git\\Tic-Tac-Toe\\Rules"));
+		case "2":
+			try {
+				var input = new BufferedReader (new FileReader("Rules.txt"));
+			
 		int radNr = 0;
 		while (true) {
 			String rad = input.readLine();
@@ -37,18 +40,11 @@ public class GameMenu {
 				break;
 			radNr++;
 			System.out.println(radNr + ": " + rad);
+			}
 		}
-		//String t = input.readLine();
-					//System.out.print(t);
-					
-			//System.out.println("  RULES");
-			//System.out.println("# The game is played on a on a 3 by 3 grid of 9 empty squares.\n"
-			//+"# Two players alternate marking empty squares,\n"
-			//+"  one player marking Xs and the other player marking Os.\n"
-			//+"# The first player to get 3 of their marks in a row\n"
-			//+"  (up, down, across, or diagonally) is the winner.\n"
-			//+"# When all 9 squares are full, the game is over.\n"
-			//+ "  If no player has 3 marks in a row, the game ends in a tie.");
+		catch(Exception e){
+			System.out.print("Reading error: The rulebook file couldn't be located");
+		}
 			System.out.println("\nPress any number key to return to the menu.");
 			System.out.print(">");
 			Scanner s2 = new Scanner(System.in);
