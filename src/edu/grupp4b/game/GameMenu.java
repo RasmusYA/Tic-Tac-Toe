@@ -1,10 +1,14 @@
+package edu.grupp4b.game;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class GameMenu {
-
+	static boolean soundOn = false;
+	
 	public static void main(String[] args) throws InterruptedException, IOException{
+		
+		
 		String welcome = "Welcome to Tic-Tac-Toe!";
 		for (int i = 0; i < welcome.length(); i++) {
 		      System.out.print(welcome.charAt(i));
@@ -20,8 +24,9 @@ public class GameMenu {
 		+ " |(1) -- Start Game  |\n"
 		+ " |(2) -- How to Play |\n"
 		+ " |(3) -- Rules       |\n"
-		+ " |(4) -- Credits     |\n"
-		+ " |(5) -- Exit        |\n"
+		+ " |(4) -- Sound Option|\n"
+		+ " |(5) -- Credits     |\n"
+		+ " |(6) -- Exit        |\n"
 		+ " X-------------------O");
 		System.out.println (menu);
 		System.out.print(">");
@@ -97,26 +102,50 @@ public class GameMenu {
 			Scanner s3 = new Scanner(System.in);
 			s3.nextInt();
 				 break;
-			 
 		case "4":
-			String title = "TIC-TAC-TOE";
-			for (int j = 0; j < welcome.length(); j++) {
-			      System.out.print(title.charAt(j));
-			      Thread.sleep(40);
+			System.out.println("Welcome to Sound Options!\n");
+			System.out.println("Please enter 'Y' to have the music on while playing or \n"
+					+ "Enter 'N' to have the music off");
+			Scanner s4 = new Scanner(System.in);
+			String gamerChoice = s4.next();
+			gamerChoice = gamerChoice.toUpperCase();
+			while (!"Y".equals(gamerChoice) && !"N".equals(gamerChoice)) {
+				System.out.println("Invalid choice!\n"
+						+"Please enter Y or N");
 			}
-			
+				if (gamerChoice.equals("Y")) {
+					soundOn = true;
+					System.out.println("The music will be on.");
+					System.out.println("Returning to to Game Menu..");
+					TimeUnit.SECONDS.sleep(2);
+				} else if (gamerChoice.equals("N")) {
+					soundOn = false;
+					System.out.println("The music will be off.");
+					System.out.println("Returning to to Game Menu..");
+					TimeUnit.SECONDS.sleep(2);
+				}
+			break;
+		case "5":
 			System.out.println("        TIC-TAC-TOE\n"
 					+"Lisa...........Lead Designer\n"
 					+"Rasmus.........Lead Designer\n"
 					+"Victoria.......Lead Designer\n"
-					+"Oskar............UX Designer");
+					+"Oskar............UX Designer\n"
+					+"Special thanks to\n"
+					+ "orangeFreeSounds for audio\n"
+					+ "https://freesound.org/people/orangefreesounds/");
+			System.out.println();
+			System.out.println("\nPress any number key to return to the menu.");
+			System.out.print(">");
+			Scanner s5 = new Scanner(System.in);
+			s5.nextInt();
 			break;
-		case "5":
+		case "6":
 			System.out.println("Program shutdown. Goodbye!");
 			System.exit(0);
 			break;
 		default:
-            System.out.println("Please, 1, 2, 3, or 4 only.");	
+            System.out.println("Please, 1, 2, 3, 4, 5 or 6 only.");	
 	} 
 			
 } while(i==1);
