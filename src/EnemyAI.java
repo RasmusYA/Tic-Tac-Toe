@@ -65,7 +65,7 @@ GameBoard.initializeNewGame();
 			} else if (slot[2] == enemyTag && slot[6] == enemyTag) {
 		    	slot[4] = enemyTag;
 			} else if (slot[4] == enemyTag && slot[6] == enemyTag) {
-		    	slot[2] = enemyTag;
+		    	slot[2] = slot[enemyTag];
 
 			}else 
 				Enemy.enemyTurn();
