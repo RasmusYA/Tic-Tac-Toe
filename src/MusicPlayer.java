@@ -24,7 +24,7 @@ public class MusicPlayer {
 				clip.open(audioInput);
 				clip.start();
 				clip.loop(clip.LOOP_CONTINUOUSLY);
-				TimeUnit.SECONDS.sleep(1000); // slutar spela efter ca 16 minuter
+				TimeUnit.SECONDS.sleep(1); // slutar spela efter ca 16 minuter
 
 			} else {
 				System.out.println("Sorry, the audio file seems to be missing..");
