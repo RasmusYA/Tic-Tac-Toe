@@ -8,12 +8,12 @@ public class GameEndCheck {
 		// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 		if (GameBoard.checkWinner(playerTag)) {
 			playerWin++;
-			EnemyLines.EnemyLoser();
 			System.out.println(
 					"\n O------------------------X\n"
 					+ " | You defeated the evil! |\n"
 					+ " |     Congratulation!!   |\n"
 					+ " X------------------------O");
+			EnemyLines.EnemyLoser();
 			Score(playerWin, enemyWin, tie);
 			return true;
 

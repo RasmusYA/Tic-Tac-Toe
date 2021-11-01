@@ -69,5 +69,6 @@ public class EnemyLines {
 		}
 		System.out.println();
 		TimeUnit.SECONDS.sleep(1);
+		System.out.println();
 	}
 }
