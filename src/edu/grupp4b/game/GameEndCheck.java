@@ -1,8 +1,12 @@
+package edu.grupp4b.game;
+import edu.grupp4b.enemy.EnemyLines;
+import edu.grupp4b.gameboard.GameBoard;
 
 public class GameEndCheck {
-
+	static int playerWin = 0; static int enemyWin = 0; static int tie = 0;
+	
 	public static boolean EndCheck(char playerTag, char enemyTag) throws InterruptedException {
-		int playerWin = 0; int enemyWin = 0; int tie = 0;
+		
 	
 		
 		// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit

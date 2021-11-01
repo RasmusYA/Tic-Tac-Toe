@@ -1,3 +1,4 @@
+package edu.grupp4b.game;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +25,7 @@ public class MusicPlayer {
 				clip.open(audioInput);
 				clip.start();
 				clip.loop(clip.LOOP_CONTINUOUSLY);
-				TimeUnit.SECONDS.sleep(1); // slutar spela efter ca 16 minuter
+				TimeUnit.SECONDS.sleep(1);
 
 			} else {
 				System.out.println("Sorry, the audio file seems to be missing..");

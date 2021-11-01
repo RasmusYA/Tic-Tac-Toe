@@ -1,3 +1,4 @@
+package edu.grupp4b.game;
 import java.util.Scanner;
 
 public class GamerTagChoice {

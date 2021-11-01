@@ -1,7 +1,8 @@
+package edu.grupp4b.gameboard;
 
 public class GameBoard {
 	
-	static char[] slot = new char[9];
+	public static char[] slot = new char[9];
 	
 	//Anropas i början av spelet och sätter nollar/tömmer alla slots/platser
 	public static void initializeNewGame() {

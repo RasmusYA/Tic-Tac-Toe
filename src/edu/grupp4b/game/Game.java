@@ -1,26 +1,29 @@
+package edu.grupp4b.game;
 import java.util.Scanner;
+
+import edu.grupp4b.enemy.Enemy;
+import edu.grupp4b.enemy.EnemyLines;
+import edu.grupp4b.enemy.EnemySmarter;
+import edu.grupp4b.gameboard.GameBoard;
 
 public class Game {
 
 	public static void startGame() throws InterruptedException {
 		Scanner scanner = new Scanner(System.in);
-		// Sätter spelarens och motståndarens Tag till X eller O
 		boolean playAgain = true;
+		
+		if(GameMenu.soundOn){
+			MusicPlayer.playTheTune("262940.wav");
+		}
+		
+		// Sätter spelarens och motståndarens Tag till X eller O
 		char playerTag = GamerTagChoice.ChoosePlayer(scanner);
 		char enemyTag = ' ';
 		if (playerTag == 'X')
 			enemyTag = 'O';
 		else {
 			enemyTag = 'X';
-		}
-		
-		System.out.println("Music? y/n ");
-		char musicInput = scanner.next().charAt(0);
-		if(musicInput == 'y'){
-			MusicPlayer.playTheTune("262940.wav");
-			MusicPlayer musicPlayer = new MusicPlayer();
-		}
-		
+		}			
 
 		// Spel-loop
 		while (playAgain) {
@@ -62,7 +65,10 @@ public class Game {
 
 			// Enemy turn
 			while (!enemyAddSlot) {
-				enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
+				
+				//enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
+				enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.blockPlayer(playerTag), enemyTag, false);
+				
 			}
 			GameBoard.showGameBoard();
 			}
