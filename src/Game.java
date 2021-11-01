@@ -18,7 +18,6 @@ public class Game {
 		if(musicInput == 'y'){
 			MusicPlayer.playTheTune("262940.wav");
 			MusicPlayer musicPlayer = new MusicPlayer();
-
 		}
 
 		GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
