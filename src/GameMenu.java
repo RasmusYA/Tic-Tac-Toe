@@ -33,7 +33,7 @@ public class GameMenu {
 			break;
 		case "2":
 			System.out.println("HOW TO PLAY");
-			String howto1 = "X----------O\n"
+			String howto1 = "oxoxoxoxoxo\n"
 					+ "The game board consists of a grid of 3 horizontal rows and 3 vertical columns:"; 
 			for (int j = 0; j < howto1.length(); j++) {
 			      System.out.print(howto1.charAt(j));
@@ -52,9 +52,8 @@ public class GameMenu {
 			
 			TimeUnit.SECONDS.sleep(2);
 			
-			String howto2 = "O----------X\n"
-					+ "You place your mark by entering a number 1-3.  First for which row and then once more for choice of column.\n"
-					+ "X----------O\n"
+			String howto2 = "You place your mark by entering a number 1-3.  First for which row and then once more for choice of column.\n"
+					+ "oxoxoxoxo\n"
 					+ "Example: Player X presses '2' for row and '3' for column, resulting in this game state:";
 			for (int k = 0; k < howto2.length(); k++) {
 			      System.out.print(howto2.charAt(k));
