@@ -97,7 +97,7 @@ public class EnemySmarter {
 		char enemyTag = gameTag;
 		
 			if (GameBoard.slot[0] == enemyTag && GameBoard.slot[1] == enemyTag && GameBoard.slot[2] == ' ') {
-				System.out.println("\nI'M UNBEATABLE!! I PICK SLOT 2");
+				System.out.println("\nI'M UNBEATABLE! I PICK SLOT 2");
 				return 2;
 			} else if (GameBoard.slot[0] == enemyTag && GameBoard.slot[2] == enemyTag && GameBoard.slot[1] == ' ') {
 				System.out.println("\nI'M UNBEATABLE! I PICK SLOT 1");
