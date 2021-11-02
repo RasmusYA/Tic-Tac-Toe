@@ -11,7 +11,7 @@ public class SoundOption {
 		System.out.println("Welcome to Sound Options!\n");
 		System.out.println("Please enter 'Y' to have the music on while playing or \n"
 				+ "Enter 'N' to have the music off");
-		System.out.print("(Y/N)> ");
+		System.out.print("> ");
 		
 		String gamerChoice = scanner.next();
 		gamerChoice = gamerChoice.toUpperCase();

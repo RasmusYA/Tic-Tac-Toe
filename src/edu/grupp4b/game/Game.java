@@ -34,68 +34,22 @@ public class Game {
 				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 				if (GameEndCheck.EndCheck(playerTag, enemyTag))
 					break;
-				if (starter) {
-					while (!addSlot) {
-						try {
-							System.out.println("First select a Row and then Column");
-							// addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är
-							// upptagen eller inte.
-							// Om platsen är tom retunerar den sant.
-							String userInput = SelectSlot.selectSlot(scanner);
-							addSlot = GameBoard.AddToGameBoard(ConvertInput.convertInputToInt(userInput), playerTag,
-									true);
-						}
-						// OM användaren matar in något annat än mellan 1-3
-						catch (ArrayIndexOutOfBoundsException ex) {
-							// scanner.nextLine(); // ------- TEST -------
-							System.out.println("Sorry, slot does not exist.");
-						}
 
-					}
-
-				} else {
-					EnemyLines.EnemySass();
-					while (!enemyAddSlot) {
-						// Repliker från fienden
-						// enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
-						enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.enemyAI(playerTag, enemyTag), enemyTag,
-								false);
-
-					}
-				}
+				//Startar rundan beroende på vem som börjar (X börjar alltid)
+				//Vid nästa rundan får nästa börja, det vill säga O
+				PlayRound.go(starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
+				
 				GameBoard.showGameBoard();
 
 				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 				if (GameEndCheck.EndCheck(playerTag, enemyTag))
 					break;
 
-				// Enemy turn
-				if (!starter) {
-					while (!addSlot) {
-						try {
-							// addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är
-							// upptagen eller inte.
-							// Om platsen är tom retunerar den sant.
-							String userInput = SelectSlot.selectSlot(scanner);
-							addSlot = GameBoard.AddToGameBoard(ConvertInput.convertInputToInt(userInput), playerTag,
-									true);
-						}
-						// OM användaren matar in något annat än mellan 1-3
-						catch (ArrayIndexOutOfBoundsException ex) {
-							// scanner.nextLine(); // ------- TEST -------
-							System.out.println("Sorry, slot does not exist.");
-						}
-					}
-				} else {
-					EnemyLines.EnemySass();
-					while (!enemyAddSlot) {
-						// Repliker från fienden
-						// enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
-						enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.enemyAI(playerTag, enemyTag), enemyTag,
-								false);
+				//Startar rundan beroende på vem som börjar (X börjar alltid)
+				//Vid nästa rundan får nästa börja, det vill säga O
+				PlayRound.go(starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
+				
 
-					}
-				}
 				GameBoard.showGameBoard();
 			}
 			System.out.println("Wanna play again? Press Y for yes and N for no: ");

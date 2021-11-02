@@ -1,5 +1,6 @@
 package edu.grupp4b.game;
 import edu.grupp4b.enemy.EnemyLines;
+import edu.grupp4b.gameboard.CheckIfWinner;
 import edu.grupp4b.gameboard.GameBoard;
 
 public class GameEndCheck {
@@ -7,10 +8,8 @@ public class GameEndCheck {
 	
 	public static boolean EndCheck(char playerTag, char enemyTag) throws InterruptedException {
 		
-	
-		
 		// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
-		if (GameBoard.checkWinner(playerTag)) {
+		if (CheckIfWinner.checkWinner(playerTag)) {
 			playerWin++;
 			System.out.println(
 					"\n O-------------------------X\n"
@@ -21,7 +20,7 @@ public class GameEndCheck {
 			Score(playerWin, enemyWin, tie);
 			return true;
 
-		} else if (GameBoard.checkWinner(enemyTag)) {
+		} else if (CheckIfWinner.checkWinner(enemyTag)) {
 			enemyWin++;
 			System.out.println(
 					"\n O-------------------------------X\n"
