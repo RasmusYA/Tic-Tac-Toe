@@ -67,7 +67,7 @@ public class Game {
 			while (!enemyAddSlot) {
 				
 				//enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
-				enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.blockPlayer(playerTag), enemyTag, false);
+				enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.enemyAI(playerTag, enemyTag), enemyTag, false);
 				
 			}
 			GameBoard.showGameBoard();
