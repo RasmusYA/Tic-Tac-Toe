@@ -4,7 +4,7 @@ import edu.grupp4b.gameboard.*;
 
 public class EnemySmarter {
 
-	public static int enemyAI(char playerTag, char enemyTag) {
+	public static int enemyAI(char playerTag, char enemyTag) throws InterruptedException {
 	
 	
 		
@@ -93,85 +93,85 @@ public class EnemySmarter {
 			return 2;
 			// enemy block row 1
 		} else if(GameBoard.slot[0] == playerTag && GameBoard.slot[1] == playerTag && GameBoard.slot[2] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 2");
+			EnemyLines.EnemyBlockLines();
 			return 2;
 		} else if (GameBoard.slot[0] == playerTag && GameBoard.slot[2] == playerTag && GameBoard.slot[1] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 1");
+			EnemyLines.EnemyBlockLines();
 			return 1;
 		} else if (GameBoard.slot[1] == playerTag && GameBoard.slot[2] == playerTag && GameBoard.slot[0] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 0");
+			EnemyLines.EnemyBlockLines();
 			return 0;
 			// enemy block row 2
 		} else if (GameBoard.slot[3] == playerTag && GameBoard.slot[4] == playerTag && GameBoard.slot[5] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED!  PICK SLOT 5");
+			EnemyLines.EnemyBlockLines();
 			return 5;
 		} else if (GameBoard.slot[3] == playerTag && GameBoard.slot[5] == playerTag && GameBoard.slot[4] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 4");
+			EnemyLines.EnemyBlockLines();
 			return 4;
 		} else if (GameBoard.slot[4] == playerTag && GameBoard.slot[5] == playerTag && GameBoard.slot[3] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 3");
+			EnemyLines.EnemyBlockLines();
 			return 3;
 			// enemy block row 3
 		} else if (GameBoard.slot[6] == playerTag && GameBoard.slot[7] == playerTag && GameBoard.slot[8] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 8");
+			EnemyLines.EnemyBlockLines();
 			return 8;
 		} else if (GameBoard.slot[6] == playerTag && GameBoard.slot[8] == playerTag && GameBoard.slot[7] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 7");
+			EnemyLines.EnemyBlockLines();
 			return 7;
 		} else if (GameBoard.slot[7] == playerTag && GameBoard.slot[8] == playerTag && GameBoard.slot[6] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 6");
+			EnemyLines.EnemyBlockLines();
 			return 6;
 
 			// enemy block column 1
 		} else if (GameBoard.slot[0] == playerTag && GameBoard.slot[3] == playerTag && GameBoard.slot[6] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 6");
+			EnemyLines.EnemyBlockLines();
 			return 6;
 		} else if (GameBoard.slot[0] == playerTag && GameBoard.slot[6] == playerTag && GameBoard.slot[3] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 3");
+			EnemyLines.EnemyBlockLines();
 			return 3;
 		} else if (GameBoard.slot[3] == playerTag && GameBoard.slot[6] == playerTag && GameBoard.slot[0] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 0");
+			EnemyLines.EnemyBlockLines();
 			return 0;
 			// enemy block column 2
 		} else if (GameBoard.slot[1] == playerTag && GameBoard.slot[4] == playerTag && GameBoard.slot[7] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 7");
+			EnemyLines.EnemyBlockLines();
 			return 7;
 		} else if (GameBoard.slot[1] == playerTag && GameBoard.slot[7] == playerTag && GameBoard.slot[4] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 4");
+			EnemyLines.EnemyBlockLines();
 			return 4;
 		} else if (GameBoard.slot[4] == playerTag && GameBoard.slot[7] == playerTag && GameBoard.slot[1] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 1");
+			EnemyLines.EnemyBlockLines();
 			return 1;
 			// enemy block column 3
 		} else if (GameBoard.slot[2] == playerTag && GameBoard.slot[5] == playerTag && GameBoard.slot[8] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 8");
+			EnemyLines.EnemyBlockLines();
 			return 8;
 		} else if (GameBoard.slot[2] == playerTag && GameBoard.slot[8] == playerTag && GameBoard.slot[5] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED!  PICK SLOT 5");
+			EnemyLines.EnemyBlockLines();
 			return 5;
 		} else if (GameBoard.slot[5] == playerTag && GameBoard.slot[8] == playerTag && GameBoard.slot[2] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 2");
+			EnemyLines.EnemyBlockLines();
 			return 2;
 
 			// enemy block diagonally 1
 		} else if (GameBoard.slot[0] == playerTag && GameBoard.slot[4] == playerTag && GameBoard.slot[8] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 8");
+			EnemyLines.EnemyBlockLines();
 			return 8;
 		} else if (GameBoard.slot[0] == playerTag && GameBoard.slot[8] == playerTag && GameBoard.slot[4] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 4");
+			EnemyLines.EnemyBlockLines();
 			return 4;
 		} else if (GameBoard.slot[4] == playerTag && GameBoard.slot[8] == playerTag && GameBoard.slot[0] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 0");
+			EnemyLines.EnemyBlockLines();
 			return 0;
 			// enemy block diagonally 2
 		} else if (GameBoard.slot[2] == playerTag && GameBoard.slot[4] == playerTag && GameBoard.slot[6] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 6");
+			EnemyLines.EnemyBlockLines();
 			return 6;
 		} else if (GameBoard.slot[2] == playerTag && GameBoard.slot[6] == playerTag && GameBoard.slot[4] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 4");
+			EnemyLines.EnemyBlockLines();
 			return 4;
 		} else if (GameBoard.slot[4] == playerTag && GameBoard.slot[6] == playerTag && GameBoard.slot[2] == ' ') {
-			System.out.println("\nMOOAHAHA, CONSIDER YOURSELF BLOCKED! I PICK SLOT 2");
+			EnemyLines.EnemyBlockLines();
 			return 2;
 		} else {
 			return Enemy.enemyTurn();
