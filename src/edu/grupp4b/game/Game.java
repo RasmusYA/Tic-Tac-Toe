@@ -1,9 +1,7 @@
 package edu.grupp4b.game;
 import java.util.Scanner;
 
-import edu.grupp4b.enemy.Enemy;
-import edu.grupp4b.enemy.EnemyLines;
-import edu.grupp4b.enemy.EnemySmarter;
+import edu.grupp4b.enemy.*;
 import edu.grupp4b.gameboard.GameBoard;
 
 public class Game {
@@ -11,10 +9,6 @@ public class Game {
 	public static void startGame() throws InterruptedException {
 		Scanner scanner = new Scanner(System.in);
 		boolean playAgain = true;
-		
-		if(GameMenu.soundOn){
-			MusicPlayer.playTheTune("262940.wav");
-		}
 		
 		// Sätter spelarens och motståndarens Tag till X eller O
 		char playerTag = GamerTagChoice.ChoosePlayer(scanner);
@@ -43,8 +37,8 @@ public class Game {
 					// addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är
 					// upptagen eller inte.
 					// Om platsen är tom retunerar den sant.
-					String userInput = selectSlot(scanner);
-					addSlot = GameBoard.AddToGameBoard(convertInputToInt(userInput), playerTag, true);
+					String userInput = SelectSlot.selectSlot(scanner);
+					addSlot = GameBoard.AddToGameBoard(ConvertInput.convertInputToInt(userInput), playerTag, true);
 				}
 				// OM användaren matar in något annat än mellan 1-3
 				catch (ArrayIndexOutOfBoundsException ex) {
@@ -59,7 +53,6 @@ public class Game {
 			if (GameEndCheck.EndCheck(playerTag,enemyTag))
 				break;
 			
-
 			// Repliker från fienden
 			EnemyLines.EnemySass();
 
@@ -82,38 +75,5 @@ public class Game {
 				
 			}
 		}
-
-	}
-
-	// Spelar får välja rad och kolumn vart de vill lägga sin nästa
-	// spelpjäs som retunerar en sträng med rad + column
-	public static String selectSlot(Scanner scanner) {
-		System.out.print("Select row: ");
-		String num1 = scanner.next();
-		System.out.print("Select column: ");
-		String num2 = scanner.next();
-		String userInput = num1 + num2;
-
-		return userInput;
-	}
-
-	// Konverterar det som användaren skriver, till exempel row: 1 och column: 3
-	// Input blir då 13, denna function konverterar detta till 2.
-	public static int convertInputToInt(String userInput) {
-		int boardNumber = switch (userInput) {
-		case "11" -> 0;
-		case "12" -> 1;
-		case "13" -> 2;
-
-		case "21" -> 3;
-		case "22" -> 4;
-		case "23" -> 5;
-
-		case "31" -> 6;
-		case "32" -> 7;
-		case "33" -> 8;
-		default -> 100;
-		};
-		return boardNumber;
 	}
 }

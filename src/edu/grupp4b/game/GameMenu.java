@@ -3,8 +3,9 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import edu.grupp4b.other.MusicPlayer;
+
 public class GameMenu {
-	static boolean soundOn = false;
 	
 	public static void main(String[] args) throws InterruptedException, IOException{
 		
@@ -106,6 +107,7 @@ public class GameMenu {
 			System.out.println("Welcome to Sound Options!\n");
 			System.out.println("Please enter 'Y' to have the music on while playing or \n"
 					+ "Enter 'N' to have the music off");
+			System.out.print("Select Y/N >");
 			Scanner s4 = new Scanner(System.in);
 			String gamerChoice = s4.next();
 			gamerChoice = gamerChoice.toUpperCase();
@@ -114,12 +116,11 @@ public class GameMenu {
 						+"Please enter Y or N");
 			}
 				if (gamerChoice.equals("Y")) {
-					soundOn = true;
+						MusicPlayer.playTheTune("262940.wav");
 					System.out.println("The music will be on.");
 					System.out.println("Returning to to Game Menu..");
 					TimeUnit.SECONDS.sleep(2);
 				} else if (gamerChoice.equals("N")) {
-					soundOn = false;
 					System.out.println("The music will be off.");
 					System.out.println("Returning to to Game Menu..");
 					TimeUnit.SECONDS.sleep(2);

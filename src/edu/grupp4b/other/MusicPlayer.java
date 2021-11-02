@@ -1,4 +1,4 @@
-package edu.grupp4b.game;
+package edu.grupp4b.other;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -13,10 +13,9 @@ import javax.sound.sampled.Clip;
 //If you like it and you want more loops like this, leave a comment or send me a message.
 
 public class MusicPlayer {
-
+	
 	public static void playTheTune(String filePath) {
 		try {
-
 			File musicPath = new File(filePath);
 
 			if (musicPath.exists()) {
@@ -24,9 +23,8 @@ public class MusicPlayer {
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInput);
 				clip.start();
-				clip.loop(clip.LOOP_CONTINUOUSLY);
+				clip.loop(Clip.LOOP_CONTINUOUSLY);
 				TimeUnit.SECONDS.sleep(1);
-
 			} else {
 				System.out.println("Sorry, the audio file seems to be missing..");
 			}
