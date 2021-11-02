@@ -13,10 +13,10 @@ public class GameEndCheck {
 		if (GameBoard.checkWinner(playerTag)) {
 			playerWin++;
 			System.out.println(
-					"\n O------------------------X\n"
-					+ " | You defeated the evil! |\n"
-					+ " |     Congratulation!!   |\n"
-					+ " X------------------------O");
+					"\n O-------------------------X\n"
+					+ " | You defeated the enemy! |\n"
+					+ " |     Congratulation!!    |\n"
+					+ " X-------------------------O");
 			EnemyLines.EnemyLoserLines();
 			Score(playerWin, enemyWin, tie);
 			return true;
