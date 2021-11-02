@@ -24,7 +24,6 @@ public class GamerTagChoice {
 					+ " |    You will plays as X    |\n"
 					+ " |      Place your tag!      |\n"
 					+ " X---------------------------O");
-			System.out.println(".\nPlace your tag!");
 			return 'X';
 		} else if (gamerChoice.equals("O")) {
 			System.out.println(
