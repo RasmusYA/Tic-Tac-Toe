@@ -76,10 +76,15 @@ public class GameMenu {
 			+ " W    ---+---+---\n" 
 			+ " S  3    |   |   \n");
 			System.out.println();
-			System.out.println("\nPress any number key to return to the menu.");
-			System.out.print(">");
-			Scanner s2 = new Scanner(System.in);
-			s2.nextInt();
+			try {
+				System.out.println("\nPress any number key to return to the menu.");
+				System.out.print(">");
+				Scanner s2 = new Scanner(System.in);
+				s2.nextInt();
+				s2.close();
+				}catch (Exception f) {
+					System.out.print(" ");
+				}
 			break;
 			
 		case "3":
@@ -98,10 +103,14 @@ public class GameMenu {
 		catch(Exception e){
 			System.out.print("Reading error: The rulebook file couldn't be located");
 		}
+		try{
 			System.out.println("\nPress any number key to return to the menu.");
 			System.out.print(">");
 			Scanner s3 = new Scanner(System.in);
 			s3.nextInt();
+		}catch(Exception f){
+			System.out.print("Reading error: The rulebook file couldn't be located");
+		}
 				 break;
 		case "4":
 			System.out.println("Welcome to Sound Options!\n");
