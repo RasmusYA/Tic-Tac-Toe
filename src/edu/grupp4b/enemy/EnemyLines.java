@@ -76,14 +76,14 @@ public class EnemyLines {
 		
 		Random r = new Random();
 
-		String[] enemyLines = new String[6];
+		String[] enemyLines = new String[7];
 		enemyLines[0] = "- LONG LIVE ME!";
 		enemyLines[1] = "- Welcome to your demise!!";
 		enemyLines[2] = "- HAHA LOOOOOOSER!!";
 		enemyLines[3] = "- Wow, you really suck!";
 		enemyLines[4] = "- Evil always win!";
 		enemyLines[5] = "- From hero to zero! How does it feel?";
-//		enemyLines[6] = "- Fucking hell..";
+		enemyLines[6] = "- WAAAHAHAHAHAHAHAA!!!";
 //		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
 //		enemyLines[8] = "- I'll be back stronger than ever!";
 //		enemyLines[9] = "- Rematch NOW, coward!!";
@@ -107,14 +107,14 @@ public class EnemyLines {
 		
 		Random r = new Random();
 
-		String[] enemyLines = new String[6];
+		String[] enemyLines = new String[7];
 		enemyLines[0] = "- HA, not so fast!!";
 		enemyLines[1] = "- Consider yourself BLOCKED!!";
 		enemyLines[2] = "- Do you think im stupid!?";
 		enemyLines[3] = "- Blockeliblocked!";
 		enemyLines[4] = "- So obvious, BLOCKED!";
 		enemyLines[5] = "- Such a basic move!";
-//		enemyLines[6] = "- Fucking hell..";
+		enemyLines[6] = "- B. L. O. C. K. BLOCK!";
 //		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
 //		enemyLines[8] = "- I'll be back stronger than ever!";
 //		enemyLines[9] = "- Rematch NOW, coward!!";
