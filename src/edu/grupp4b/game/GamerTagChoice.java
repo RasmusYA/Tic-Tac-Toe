@@ -19,10 +19,20 @@ public class GamerTagChoice {
 		}
 
 		if (gamerChoice.equals("X")) {
-			System.out.println("You will plays as X.");
+			System.out.println(
+					"\n O---------------------------X\n"
+					+ " |    You will plays as X    |\n"
+					+ " |      Place your tag!      |\n"
+					+ " X---------------------------O");
+			System.out.println(".\nPlace your tag!");
 			return 'X';
 		} else if (gamerChoice.equals("O")) {
-			System.out.println("You will plays as O.");
+			System.out.println(
+					"\n O---------------------------X\n"
+					+ " |    You will plays as O    |\n"
+					+ " |    Wait for enemy move!   |\n"
+					+ " X---------------------------O");
+			
 			return 'O';
 		}
 		return 'X';

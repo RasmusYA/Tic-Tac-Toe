@@ -27,7 +27,6 @@ public class Game {
 		while (playAgain) {
 			GameBoard.initializeNewGame(); // Återställer spelbräder, alla slots blir tomma
 			GameBoard.showGameBoard(); // Visar spelbrädet
-			System.out.println("First select a Row and then Column");
 			while (true) {
 				boolean addSlot = false;
 				boolean enemyAddSlot = false;
@@ -38,6 +37,7 @@ public class Game {
 				if (starter) {
 					while (!addSlot) {
 						try {
+							System.out.println("First select a Row and then Column");
 							// addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är
 							// upptagen eller inte.
 							// Om platsen är tom retunerar den sant.
@@ -54,9 +54,9 @@ public class Game {
 					}
 
 				} else {
+					EnemyLines.EnemySass();
 					while (!enemyAddSlot) {
 						// Repliker från fienden
-						EnemyLines.EnemySass();
 						// enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
 						enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.enemyAI(playerTag, enemyTag), enemyTag,
 								false);
@@ -91,9 +91,9 @@ public class Game {
 					}
 
 				} else {
+					EnemyLines.EnemySass();
 					while (!enemyAddSlot) {
 						// Repliker från fienden
-						EnemyLines.EnemySass();
 						// enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
 						enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.enemyAI(playerTag, enemyTag), enemyTag,
 								false);
@@ -112,7 +112,11 @@ public class Game {
 
 			}
 			round++;
-			System.out.print("ROUND " + round);
+			System.out.println(
+					"\n O------------X\n"
+					+ " |    ROUND   |\n"
+					+ " |      "+ round +"     |\n"
+					+ " X------------O");
 			if (starter) {
 				starter = false;
 			}
