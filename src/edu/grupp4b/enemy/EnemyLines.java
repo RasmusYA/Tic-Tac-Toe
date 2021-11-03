@@ -7,7 +7,7 @@ public class EnemyLines {
 	public static void EnemySass() throws InterruptedException {
 
 		Random r = new Random();
-
+        //Repliker som används innan fiendedrag
 		String[] enemyLines = new String[10];
 		enemyLines[0] = "- HAHA, you thought you could beat me?!";
 		enemyLines[1] = "- You fool! Watch this!";
@@ -42,7 +42,7 @@ public class EnemyLines {
 	public static void EnemyLoserLines() throws InterruptedException {
 		
 		Random r = new Random();
-		
+		//Repliker som används vid fiendeförlust
 		String[] enemyLines = new String[10];
 		enemyLines[0] = "- NooooOOOOoooOOOOOooo!";
 		enemyLines[1] = "- You son of a bitch!!";
@@ -75,7 +75,7 @@ public class EnemyLines {
 	public static void EnemyWinnerLines() throws InterruptedException {
 		
 		Random r = new Random();
-
+		//Repliker som används vid fiendevinst
 		String[] enemyLines = new String[7];
 		enemyLines[0] = "- LONG LIVE ME!";
 		enemyLines[1] = "- Welcome to your demise!!";
@@ -106,7 +106,7 @@ public class EnemyLines {
 	public static void EnemyBlockLines() throws InterruptedException {
 		
 		Random r = new Random();
-
+		//Repliker som används vid block från EnemySmarter
 		String[] enemyLines = new String[7];
 		enemyLines[0] = "- HA, not so fast!!";
 		enemyLines[1] = "- Consider yourself BLOCKED!!";

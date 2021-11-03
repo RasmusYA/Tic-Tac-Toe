@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class GamerTagChoice {
 	
 	public static char ChoosePlayer(Scanner scanner) {
-
+        // ChoosePlayer körs vid start av nytt spel. 
+		// Spelare väljer sin tag och den kvarvarande tilldelas datorn. 
 		System.out.println("Start the game by choosing if you want to play as Xs or Os.");
 		System.out.print("Write X or O to choose: ");
 		Scanner s = scanner;

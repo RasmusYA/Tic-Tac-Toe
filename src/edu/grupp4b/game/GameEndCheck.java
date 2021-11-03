@@ -44,6 +44,7 @@ public class GameEndCheck {
 	}
 	
 	public static void Score(int playerWin, int enemyWin, int tie) {
+		// Scorebard med ställning visas efter varje spelomgång. 
 		System.out.println(
 				"\n O-------------------------------X\n"
 				+ " |        ---> SCORE <---        |\n"

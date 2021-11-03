@@ -27,9 +27,9 @@ public class PlayRound {
 				}
 			}
 		} else {
+			// Repliker från fienden
 			EnemyLines.EnemySass();
 			while (!enemyAddSlot) {
-				// Repliker från fienden
 				// enemyAddSlot = GameBoard.AddToGameBoard(Enemy.enemyTurn(), enemyTag, false);
 				enemyAddSlot = GameBoard.AddToGameBoard(EnemySmarter.enemyAI(playerTag, enemyTag), enemyTag, false);
 

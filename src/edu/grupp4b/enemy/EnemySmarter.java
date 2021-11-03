@@ -5,6 +5,8 @@ import edu.grupp4b.gameboard.*;
 public class EnemySmarter {
 
 	public static int enemyAI(char playerTag, char enemyTag) throws InterruptedException {
+		// enemyAI aktiveras om fienden har två i rad och kan vinna eller om spelaren har två i rad och behöver blockas.
+		// Annars körs Enemy för slumpplacering
 	
 	// enemy winning row 1
 		if (GameBoard.slot[0] == enemyTag && GameBoard.slot[1] == enemyTag && GameBoard.slot[2] == ' ') {
