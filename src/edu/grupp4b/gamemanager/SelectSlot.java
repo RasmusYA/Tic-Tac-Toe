@@ -1,4 +1,4 @@
-package edu.grupp4b.game;
+package edu.grupp4b.gamemanager;
 
 import java.util.Scanner;
 

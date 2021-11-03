@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import edu.grupp4b.enemy.*;
 import edu.grupp4b.gameboard.GameBoard;
+import edu.grupp4b.gamemanager.Score;
 
 public class Game {
 
@@ -61,7 +62,8 @@ public class Game {
 			if (option.equals("N")) {
 				playAgain = false;
 				System.out.println("Your game will now end, welcome back! ");
-
+				//Reset score 
+				Score.resetScore();
 			}
 			round++;
 			if(!option.equals("N")) {

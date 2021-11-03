@@ -5,6 +5,8 @@ import java.util.Scanner;
 import edu.grupp4b.enemy.EnemyLines;
 import edu.grupp4b.enemy.EnemySmarter;
 import edu.grupp4b.gameboard.GameBoard;
+import edu.grupp4b.gamemanager.ConvertInput;
+import edu.grupp4b.gamemanager.SelectSlot;
 
 public class PlayRound {
 

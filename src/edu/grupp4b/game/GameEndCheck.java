@@ -2,26 +2,26 @@ package edu.grupp4b.game;
 import edu.grupp4b.enemy.EnemyLines;
 import edu.grupp4b.gameboard.CheckIfWinner;
 import edu.grupp4b.gameboard.GameBoard;
+import edu.grupp4b.gamemanager.Score;
 
 public class GameEndCheck {
-	static int playerWin = 0; static int enemyWin = 0; static int tie = 0;
 	
 	public static boolean EndCheck(char playerTag, char enemyTag) throws InterruptedException {
 		
 		// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 		if (CheckIfWinner.checkWinner(playerTag)) {
-			playerWin++;
+			Score.playerWin++;
 			System.out.println(
 					"\n O-------------------------X\n"
 					+ " | You defeated the enemy! |\n"
 					+ " |     Congratulation!!    |\n"
 					+ " X-------------------------O");
 			EnemyLines.EnemyLoserLines();
-			Score(playerWin, enemyWin, tie);
+			Score.showScore();
 			return true;
 
 		} else if (CheckIfWinner.checkWinner(enemyTag)) {
-			enemyWin++;
+			Score.enemyWin++;
 			System.out.println(
 					"\n O-------------------------------X\n"
 					+ " |            You lost..         |\n"
@@ -29,27 +29,16 @@ public class GameEndCheck {
 					+ " X-------------------------------O");
 
 			EnemyLines.EnemyWinnerLines();
-			Score(playerWin, enemyWin, tie);
+			Score.showScore();
 			return true;
 
 		} else if (GameBoard.checkIfSlotsFull()) {
-			tie++;
+			Score.tie++;
 			System.out.println("It's a tie!");
 			EnemyLines.EnemyTieLines();
-			Score(playerWin, enemyWin, tie);
+			Score.showScore();
 			return true;
-			
 		}
-		
 		return false;
-	}
-	
-	public static void Score(int playerWin, int enemyWin, int tie) {
-		// Scorebard med ställning visas efter varje spelomgång. 
-		System.out.println(
-				"\n O-------------------------------X\n"
-				+ " |        ---> SCORE <---        |\n"
-				+ " | Player: " + playerWin + " | Enemy: " + enemyWin + " | Tie: " + tie + " |\n"
-				+ " X-------------------------------O");
 	}
 }
