@@ -41,7 +41,7 @@ public class HowToPlayOption {
 				+ " S  3    |   |   \n");
 		System.out.println();
 		try {
-			System.out.println("\nPress any number key to return to the menu.");
+			System.out.println("\nPress any key to return to the menu.");
 			System.out.print(">");
 			s2.nextInt();
 			

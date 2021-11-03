@@ -14,6 +14,7 @@ public class GameMenu {
 			Thread.sleep(40);
 
 		}
+		//Meny-loop som låter användaren välja alternativ via sifferinmatning
 		int i = 1;
 		Scanner s = new Scanner(System.in);
 		do {
@@ -46,10 +47,15 @@ public class GameMenu {
 						+ "Oskar............UX Designer\n" + "Special thanks to\n" + "orangeFreeSounds for audio\n"
 						+ "https://freesound.org/people/orangefreesounds/");
 				System.out.println();
-				System.out.println("\nPress any number key to return to the menu.");
+				try {
+				System.out.println("\nPress any key to return to the menu.");
 				System.out.print(">");
 				Scanner s5 = new Scanner(System.in);
 				s5.nextInt();
+				}
+				catch(Exception h){
+				System.out.print("");
+				}
 				break;
 			case "6":
 				System.out.println("Program shutdown. Goodbye!");

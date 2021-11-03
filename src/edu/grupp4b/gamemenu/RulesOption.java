@@ -20,7 +20,7 @@ public class RulesOption {
 		System.out.print("Reading error: The rulebook file couldn't be located");
 	}
 	try {
-		System.out.println("\nPress any number key to return to the menu.");
+		System.out.println("\nPress any key to return to the menu.");
 		System.out.print(">");
 		s3.nextInt();
 		
