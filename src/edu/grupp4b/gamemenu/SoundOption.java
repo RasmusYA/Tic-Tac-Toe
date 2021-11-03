@@ -9,8 +9,8 @@ public class SoundOption {
 
 	public static void selectSound(Scanner scanner) throws InterruptedException {
 		System.out.println("Welcome to Sound Options!\n");
-		System.out.println("Please enter 'Y' to have the music on while playing or \n"
-				+ "Enter 'N' to have the music off");
+		System.out.println("Please enter Y to have the music on while playing or \n"
+				+ "Enter N to have the music off");
 		System.out.print("> ");
 		
 		String gamerChoice = scanner.next();

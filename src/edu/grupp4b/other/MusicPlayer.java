@@ -13,8 +13,9 @@ import javax.sound.sampled.Clip;
 //If you like it and you want more loops like this, leave a comment or send me a message.
 
 public class MusicPlayer {
-	
+
 	public static void playTheTune(String filePath) {
+		
 		try {
 			File musicPath = new File(filePath);
 

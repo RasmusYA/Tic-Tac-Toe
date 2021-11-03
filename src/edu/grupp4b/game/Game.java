@@ -53,21 +53,24 @@ public class Game {
 
 				GameBoard.showGameBoard();
 			}
-			System.out.println("Wanna play again? Press Y for yes and N for no.\n>");
+			System.out.println("Wanna play again? Press Y for yes and N for no.");
+			System.out.print(">");
 			String option = scanner.next();
 			option = option.toUpperCase();
 
 			if (option.equals("N")) {
 				playAgain = false;
-				System.out.println("your game will now end, welcome back! ");
+				System.out.println("Your game will now end, welcome back! ");
 
 			}
 			round++;
+			if(!option.equals("N")) {
 			System.out.println(
 					"\n O------------X\n"
 					+ " |    ROUND   |\n"
 					+ " |      "+ round +"     |\n"
 					+ " X------------O");
+			}
 			if (starter) {
 				starter = false;
 			}
