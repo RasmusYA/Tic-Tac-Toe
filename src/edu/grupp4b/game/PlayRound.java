@@ -11,7 +11,7 @@ public class PlayRound {
 	public static void go(boolean starter, boolean addSlot, boolean enemyAddSlot, Scanner scanner, char playerTag,
 			char enemyTag) throws InterruptedException {
 
-		if (!starter) {
+		if (starter) {
 			while (!addSlot) {
 				try {
 					// addSlot retunerar sant eller falskt om där man vill placera sin spelpjäs är

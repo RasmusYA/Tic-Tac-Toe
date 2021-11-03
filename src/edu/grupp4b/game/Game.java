@@ -39,6 +39,7 @@ public class Game {
 				//Vid nästa rundan får nästa börja, det vill säga O
 				PlayRound.go(starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
 				
+				
 				GameBoard.showGameBoard();
 
 				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
@@ -47,12 +48,12 @@ public class Game {
 
 				//Startar rundan beroende på vem som börjar (X börjar alltid)
 				//Vid nästa rundan får nästa börja, det vill säga O
-				PlayRound.go(starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
+				PlayRound.go(!starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
 				
 
 				GameBoard.showGameBoard();
 			}
-			System.out.println("Wanna play again? Press Y for yes and N for no: ");
+			System.out.println("Wanna play again? Press Y for yes and N for no.\n>");
 			String option = scanner.next();
 			option = option.toUpperCase();
 
