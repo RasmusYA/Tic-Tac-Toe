@@ -35,6 +35,7 @@ public class GameEndCheck {
 		} else if (GameBoard.checkIfSlotsFull()) {
 			tie++;
 			System.out.println("It's a tie!");
+			EnemyLines.EnemyTieLines();
 			Score(playerWin, enemyWin, tie);
 			return true;
 			

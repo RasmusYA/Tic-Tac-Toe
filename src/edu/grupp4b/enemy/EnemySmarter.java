@@ -8,7 +8,7 @@ public class EnemySmarter {
 		// enemyAI aktiveras om fienden har två i rad och kan vinna eller om spelaren har två i rad och behöver blockas.
 		// Annars körs Enemy för slumpplacering
 	
-	// enemy winning row 1
+	        // enemy winning row 1
 		if (GameBoard.slot[0] == enemyTag && GameBoard.slot[1] == enemyTag && GameBoard.slot[2] == ' ') {
 			return 2;
 		} else if (GameBoard.slot[0] == enemyTag && GameBoard.slot[2] == enemyTag && GameBoard.slot[1] == ' ') {

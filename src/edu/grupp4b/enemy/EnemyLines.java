@@ -12,7 +12,7 @@ public class EnemyLines {
 		enemyLines[0] = "- HAHA, you thought you could beat me?!";
 		enemyLines[1] = "- You fool! Watch this!";
 		enemyLines[2] = "- You underestimate the power of evil!";
-		enemyLines[3] = "- My next move is gonnan blow your mind!";
+		enemyLines[3] = "- My next move is gonna blow your mind!";
 		enemyLines[4] = "- You got nothing on me!";
 		enemyLines[5] = "- MOHAHAHA";
 		enemyLines[6] = "- You are no match for me!";
@@ -49,7 +49,7 @@ public class EnemyLines {
 		enemyLines[2] = "- Face me aganin and I will CRUSH YOU!";
 		enemyLines[3] = "- Beginner's luck!";
 		enemyLines[4] = "- You cheated.. I KNOW you cheated!";
-		enemyLines[5] = "- The evil vill rise again!";
+		enemyLines[5] = "- The evil will rise again!";
 		enemyLines[6] = "- Fucking hell..";
 		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
 		enemyLines[8] = "- I'll be back stronger than ever!";
@@ -84,9 +84,7 @@ public class EnemyLines {
 		enemyLines[4] = "- Evil always win!";
 		enemyLines[5] = "- From hero to zero! How does it feel?";
 		enemyLines[6] = "- WAAAHAHAHAHAHAHAA!!!";
-//		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
-//		enemyLines[8] = "- I'll be back stronger than ever!";
-//		enemyLines[9] = "- Rematch NOW, coward!!";
+
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemyLoser = enemyLines[randomNumber];
@@ -107,7 +105,7 @@ public class EnemyLines {
 		
 		Random r = new Random();
 		//Repliker som används vid block från EnemySmarter
-		String[] enemyLines = new String[7];
+		String[] enemyLines = new String[10];
 		enemyLines[0] = "- HA, not so fast!!";
 		enemyLines[1] = "- Consider yourself BLOCKED!!";
 		enemyLines[2] = "- Do you think im stupid!?";
@@ -115,9 +113,9 @@ public class EnemyLines {
 		enemyLines[4] = "- So obvious, BLOCKED!";
 		enemyLines[5] = "- Such a basic move!";
 		enemyLines[6] = "- B. L. O. C. K. BLOCK!";
-//		enemyLines[7] = "- AAARGH!!! Your success won't be final. Your failure will be!";
-//		enemyLines[8] = "- I'll be back stronger than ever!";
-//		enemyLines[9] = "- Rematch NOW, coward!!";
+		enemyLines[7] = "- Wops, it looks like I'm in your way haha!";
+		enemyLines[8] = "- You won't get past me!";
+		enemyLines[9] = "- It's block o'clock!";
 
 		int randomNumber = r.nextInt(enemyLines.length);
 		String enemyLoser = enemyLines[randomNumber];
@@ -133,4 +131,19 @@ public class EnemyLines {
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println();
 	}
+public static void EnemyTieLines() throws InterruptedException {
+		
+	String enemyTie = "\t- Face me again, I dare you!!";
+		
+	
+		System.out.print("\t");
+		
+		for (int i = 0; i < enemyTie.length(); i++) {
+			System.out.print(enemyTie.charAt(i));
+			Thread.sleep(50);
+		}
+		System.out.println();
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println();
+   }
 }
