@@ -17,6 +17,8 @@ public class SoundOption {
 		gamerChoice = gamerChoice.toUpperCase();
 		while (!"Y".equals(gamerChoice) && !"N".equals(gamerChoice)) {
 			System.out.println("Invalid choice!\n" + "Please enter Y or N");
+			gamerChoice = scanner.next();
+			gamerChoice = gamerChoice.toUpperCase();
 		}
 		if (gamerChoice.equals("Y")) {
 			MusicPlayer.playTheTune("262940.wav");
