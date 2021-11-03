@@ -44,7 +44,10 @@ public class GameEndCheck {
 	}
 	
 	public static void Score(int playerWin, int enemyWin, int tie) {
-		System.out.println("       ---> SCORE <---");
-		System.out.println(" Player: " + playerWin + " | Enemy: " + enemyWin + " | Tie: " + tie + "\n");
+		System.out.println(
+				"\n O-------------------------------X\n"
+				+ " |        ---> SCORE <---        |\n"
+				+ " | Player: " + playerWin + " | Enemy: " + enemyWin + " | Tie: " + tie + " |\n"
+				+ " X-------------------------------O");
 	}
 }
