@@ -7,14 +7,16 @@ public class GamerTagChoice {
         // ChoosePlayer körs vid start av nytt spel. 
 		// Spelare väljer sin tag och den kvarvarande tilldelas datorn. 
 		System.out.println("Start the game by choosing if you want to play as Xs or Os.");
-		System.out.print("Write X or O to choose: ");
+		System.out.println("Write X or O to choose.");
+		System.out.print(">");
 		Scanner s = scanner;
 		String gamerChoice = s.next();
 		gamerChoice = gamerChoice.toUpperCase();
 
 		while (!"X".equals(gamerChoice) && !"O".equals(gamerChoice)) {
 			System.out.println("Invalid choice!");
-			System.out.print("Write X or O to choose: ");
+			System.out.println("Write X or O to choose");
+			System.out.print(">");
 			gamerChoice = s.next();
 			gamerChoice = gamerChoice.toUpperCase();
 		}

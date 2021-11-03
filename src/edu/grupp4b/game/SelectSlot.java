@@ -7,9 +7,11 @@ public class SelectSlot {
 	// Spelar får välja rad och kolumn vart de vill lägga sin nästa
 	// spelpjäs som retunerar en sträng med rad + column
 	public static String selectSlot(Scanner scanner) {
-		System.out.print("Select row: ");
+		System.out.println("Select row.");
+		System.out.print(">");
 		String num1 = scanner.next();
-		System.out.print("Select column: ");
+		System.out.println("Select column.");
+		System.out.print(">");
 		String num2 = scanner.next();
 		String userInput = num1 + num2;
 
