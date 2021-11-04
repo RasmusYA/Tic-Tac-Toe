@@ -108,7 +108,7 @@ public class EnemyLines {
 		String[] enemyLines = new String[10];
 		enemyLines[0] = "- HA, not so fast!!";
 		enemyLines[1] = "- Consider yourself BLOCKED!!";
-		enemyLines[2] = "- Do you think im stupid!?";
+		enemyLines[2] = "- Do you think I'm stupid!?";
 		enemyLines[3] = "- Blockeliblocked!";
 		enemyLines[4] = "- So obvious, BLOCKED!";
 		enemyLines[5] = "- Such a basic move!";
