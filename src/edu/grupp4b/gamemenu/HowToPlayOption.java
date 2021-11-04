@@ -5,7 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 public class HowToPlayOption {
 	public static void selectHowToPlay() throws InterruptedException {
-		Scanner s2 = new Scanner(System.in);
+
+		Scanner s = new Scanner(System.in);
+		/*
+		 * Spelmekaniken förklaras med löpande text via inbyggda metoden Thread.sleep.
+		 * sleep används också för att göra korta pauser mellan de olika instruktionerna.
+		 */
 		System.out.println("HOW TO PLAY");
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println("oxoxoxoxoxo");
@@ -17,12 +22,11 @@ public class HowToPlayOption {
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println();
 		System.out.println("\n" + "         COLUMNS  \n" + "        1   2   3 \n" + "     1    |   |   \n"
-				+ "  R    ---+---+---\n" + "  O  2    |   |   \n" + "  W    ---+---+---\n"
-				+ "  S  3    |   |   \n");
+				+ "  R    ---+---+---\n" + "  O  2    |   |   \n" + "  W    ---+---+---\n" + "  S  3    |   |   \n");
 
 		TimeUnit.SECONDS.sleep(2);
-		String howto2 = "You place your mark by entering a number 1-3.  First for which row and then once more for choice of column.";		
-				 
+		String howto2 = "You place your mark by entering a number 1-3.  First for which row and then once more for choice of column.";
+
 		for (int k = 0; k < howto2.length(); k++) {
 			System.out.print(howto2.charAt(k));
 			Thread.sleep(40);
@@ -37,19 +41,24 @@ public class HowToPlayOption {
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println();
 		System.out.println("\n" + "        COLUMNS  \n" + "       1   2   3 \n" + "    1    |   |   \n"
-				+ " R    ---+---+---\n" + " O  2    |   | X  \n" + " W    ---+---+---\n"
-				+ " S  3    |   |   \n");
-		System.out.println();
-		try {
-			System.out.println("\nPress any key to return to the menu.");
-			System.out.print(">");
-			s2.nextInt();
-			
-		} catch (Exception g) {
-			System.out.print(" ");	
-		}
-		
-	}
-	
-}
+				+ " R    ---+---+---\n" + " O  2    |   | X  \n" + " W    ---+---+---\n" + " S  3    |   |   \n");
 
+		/*
+		 * Användaren får mata in valfri input för att återgå till menyn.
+		 * en exception gör att samma resultat ges om input inte är en siffra.
+		 */
+		System.out.println();
+		System.out.println("\nPress any key to return to the menu.");
+		System.out.print(">");
+		try {
+			s.hasNextLine();
+			s.nextInt();
+
+			System.out.println("Returning to to Game Menu...");
+			s.close();
+		} catch (Exception e) {
+			System.out.println("Returning to to Game Menu...");
+
+		}
+	}
+}

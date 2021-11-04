@@ -5,27 +5,37 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class RulesOption {
-	public static void selectRules(){
-		Scanner s3 = new Scanner(System.in);
-	try {
-		var input = new BufferedReader(new FileReader("Rules.txt"));
+	public static void selectRules() {
+		Scanner s = new Scanner(System.in); 
+		try {
+			// Läser från .txt-filen Rules
+			var input = new BufferedReader(new FileReader("Rules.txt"));
 
-		while (true) {
-			String rad = input.readLine();
-			if (rad == null)
-				break;
-			System.out.println(rad);
+			while (true) {
+				String rad = input.readLine();
+				if (rad == null)
+					break;
+				System.out.println(rad);
+			}
+			input.close();
+			//Felmeddelande om det skulle vara något krångel med .txt-filen
+		} catch (Exception e) {
+			System.out.print("Reading error: The rulebook file couldn't be located");
 		}
-	} catch (Exception e) {
-		System.out.print("Reading error: The rulebook file couldn't be located");
-	}
-	try {
+		/*Användaren får mata in valfri input för att återgå till menyn.
+		 en exception gör att samma resultat ges om input inte är en siffra.*/
 		System.out.println("\nPress any key to return to the menu.");
 		System.out.print(">");
-		s3.nextInt();
-		
-	} catch (Exception f) {
-		System.out.print(" ");
+		try {
+			s.hasNextLine();
+			s.nextInt();
+
+			System.out.println("Returning to to Game Menu...");
+			s.close();
+		} catch (Exception e) {
+			System.out.println("Returning to to Game Menu...");
+			
+
 	}
-}
+	}	
 }

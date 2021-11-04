@@ -12,11 +12,13 @@ public class GameMenu {
 		for (int i = 0; i < welcome.length(); i++) {
 			System.out.print(welcome.charAt(i));
 			Thread.sleep(40);
-
 		}
-		//Meny-loop som låter användaren välja alternativ via sifferinmatning
+		
 		int i = 1;
 		Scanner s = new Scanner(System.in);
+		Scanner s2 = new Scanner(System.in);
+		
+		// Meny-loop som pressenterar menyval.
 		do {
 
 			String menu = ("\n O-------------------X\n" + " |Choose an Option:  |\n" + " |(1) -- Start Game  |\n"
@@ -26,14 +28,16 @@ public class GameMenu {
 			System.out.print(">");
 			String choice = s.nextLine();
 
+			//switch/case låter användaren göra val med hjälp av sifferinmatning.
 			switch (choice) {
+			/*Case 1, 2, 3 och 4 anropar metoder från andra klasser i programmet
+			och resulterar till att man tas vidare till andra delar av programmet.*/
 			case "1":
 				Game.startGame();
 				break;
 			case "2":
 				HowToPlayOption.selectHowToPlay();
 				break;
-
 			case "3":
 				RulesOption.selectRules();
 				break;
@@ -48,13 +52,14 @@ public class GameMenu {
 						+ "https://freesound.org/people/orangefreesounds/");
 				System.out.println();
 				try {
-				System.out.println("\nPress any key to return to the menu.");
-				System.out.print(">");
-				Scanner s5 = new Scanner(System.in);
-				s5.nextInt();
-				}
-				catch(Exception h){
-				System.out.print("");
+					System.out.println("\nPress any key to return to the menu.");
+					System.out.print(">");
+
+					s2.nextInt();
+
+				} catch (Exception h) {
+					System.out.print("");
+
 				}
 				break;
 			case "6":
@@ -67,5 +72,6 @@ public class GameMenu {
 
 		} while (i == 1);
 		s.close();
+		s2.close();
 	}
 }
