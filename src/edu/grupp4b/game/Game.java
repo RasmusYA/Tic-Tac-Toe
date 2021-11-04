@@ -36,21 +36,17 @@ public class Game {
 				if (GameEndCheck.EndCheck(playerTag, enemyTag))
 					break;
 
-				//Startar rundan beroende på vem som börjar (X börjar alltid)
-				//Vid nästa rundan får nästa börja, det vill säga O
+				// Startar rundan beroende på vem som börjar (X börjar alltid)
+				// Vid nästa "slag" får nästa börja (rad 49), det vill säga O
 				PlayRound.go(starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
-				
-				
+
 				GameBoard.showGameBoard();
 
 				// Bryter spelet om alla platser på spelbrädet är fulla eller någon har vunnit
 				if (GameEndCheck.EndCheck(playerTag, enemyTag))
 					break;
 
-				//Startar rundan beroende på vem som börjar (X börjar alltid)
-				//Vid nästa rundan får nästa börja, det vill säga O
 				PlayRound.go(!starter, addSlot, enemyAddSlot, scanner, playerTag, enemyTag);
-				
 
 				GameBoard.showGameBoard();
 			}
@@ -62,21 +58,18 @@ public class Game {
 			if (option.equals("N")) {
 				playAgain = false;
 				System.out.println("Your game will now end, welcome back! ");
-				//Reset score 
+				// Reset score
 				Score.resetScore();
 			}
 			round++;
-			if(!option.equals("N")) {
-			System.out.println(
-					"\n O------------X\n"
-					+ " |    ROUND   |\n"
-					+ " |      "+ round +"     |\n"
-					+ " X------------O");
+			//Skriver inte ut rundan om spelet avslutas
+			if (!option.equals("N")) {
+				System.out.println("\n O------------X\n" + " |    ROUND   |\n" + " |      " + round + "     |\n"
+						+ " X------------O");
 			}
 			if (starter) {
 				starter = false;
-			}
-			else {
+			} else {
 				starter = true;
 			}
 		}

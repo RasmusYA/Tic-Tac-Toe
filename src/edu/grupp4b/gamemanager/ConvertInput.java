@@ -2,8 +2,9 @@ package edu.grupp4b.gamemanager;
 
 public class ConvertInput {
 	
-	// Konverterar det som användaren skriver, till exempel row: 1 och column: 3
-	// Input blir då 13, denna function konverterar detta till 2.
+	// Konverterar input av användaren, till exempel om man väljer row: 1 och column: 3
+	// Input blir då 13, denna function konverterar detta till 2. vilken används sen för att
+	// lägga till sig spelpjäs på slot nummer 2.
 	public static int convertInputToInt(String userInput) {
 		int boardNumber = switch (userInput) {
 		case "11" -> 0;
