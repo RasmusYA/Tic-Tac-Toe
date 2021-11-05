@@ -50,15 +50,15 @@ public class HowToPlayOption {
 		System.out.println();
 		System.out.println("\nPress any key to return to the menu.");
 		System.out.print(">");
-		try {
+//		try {
 			s.hasNextLine();
-			s.nextInt();
-
+//			s.nextInt();
+//
 			System.out.println("Returning to to Game Menu...");
-			s.close();
-		} catch (Exception e) {
-			System.out.println("Returning to to Game Menu...");
-
-		}
+//			s.close();
+//		} catch (Exception e) {
+//			System.out.println("Returning to to Game Menu...");
+//
+//		}
 	}
 }
